@@ -14,6 +14,8 @@ const AskController = async (req, res, next, initializeClient, addTitle) => {
     modelDisplayLabel,
     parentMessageId = null,
     overrideParentMessageId = null,
+    isSearchEnabled = false,
+    searchResults = [],
   } = req.body;
 
   logger.debug('[AskController]', {
@@ -61,21 +63,6 @@ const AskController = async (req, res, next, initializeClient, addTitle) => {
     const { onProgress: progressCallback, getPartialText } = createOnProgress({
       onProgress: throttle(
         ({ text: partialText }) => {
-          /*
-              const unfinished = endpointOption.endpoint === EModelEndpoint.google ? false : true;
-          messageCache.set(responseMessageId, {
-            messageId: responseMessageId,
-            sender,
-            conversationId,
-            parentMessageId: overrideParentMessageId ?? userMessageId,
-            text: partialText,
-            model: client.modelOptions.model,
-            unfinished,
-            error: false,
-            user,
-          }, Time.FIVE_MINUTES);
-          */
-
           messageCache.set(responseMessageId, partialText, Time.FIVE_MINUTES);
         },
         3000,
@@ -123,9 +110,23 @@ const AskController = async (req, res, next, initializeClient, addTitle) => {
       progressCallback,
       progressOptions: {
         res,
-        // parentMessageId: overrideParentMessageId || userMessageId,
       },
     };
+
+    // If search is enabled, modify the prompt to include search context
+    if (isSearchEnabled && searchResults.length > 0) {
+      const searchContext = searchResults
+        .map(result => `${result.title}: ${result.snippet}`)
+        .join('\n');
+      
+      // Create a system message that includes the search results but instructs to respond naturally
+      text = `[System: You have access to the following real-time web search results. Use this information to provide an accurate and concise answer, but respond naturally as if you directly knew this information. Do not mention the search results or that you're using them.]
+
+Search Results:
+${searchContext}
+
+[User Query]: ${text}`;
+    }
 
     let response = await client.sendMessage(text, messageOptions);
     response.endpoint = endpointOption.endpoint;

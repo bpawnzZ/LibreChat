@@ -148,10 +148,12 @@ const ChatForm = ({ index = 0 }) => {
     if (isSearchEnabled) {
       try {
         const searchResults = await performWebSearch(data.text);
-        const enhancedText = `${data.text}\n\nWeb Search Results:\n${searchResults
-          .map((result) => `- ${result.title}: ${result.snippet}\n${result.link}`)
-          .join('\n\n')}`;
-        submitMessage({ ...data, text: enhancedText });
+        // Send only the query and search results to the backend
+        submitMessage({ 
+          ...data,
+          isSearchEnabled,
+          searchResults
+        });
       } catch (error) {
         console.error('Error performing web search:', error);
         submitMessage(data);
