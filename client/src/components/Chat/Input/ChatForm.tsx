@@ -1,12 +1,6 @@
 import { memo, useRef, useMemo, useEffect } from 'react';
 import { useRecoilState, useRecoilValue } from 'recoil';
 import {
-  supportsFiles,
-  mergeFileConfig,
-  isAssistantsEndpoint,
-  fileConfig as defaultFileConfig,
-} from 'librechat-data-provider';
-import {
   useChatContext,
   useChatFormContext,
   useAddedChatContext,
@@ -21,8 +15,7 @@ import {
   useSubmitMessage,
 } from '~/hooks';
 import FileFormWrapper from './Files/FileFormWrapper';
-import { TextareaAutosize } from '~/components/ui';
-import { useGetFileConfig } from '~/data-provider';
+import { TextareaAutosize, Switch } from '~/components/ui';
 import { cn, removeFocusRings } from '~/utils';
 import TextareaHeader from './TextareaHeader';
 import PromptsCommand from './PromptsCommand';
@@ -42,6 +35,7 @@ const ChatForm = ({ index = 0 }) => {
   const SpeechToText = useRecoilValue(store.speechToText);
   const TextToSpeech = useRecoilValue(store.textToSpeech);
   const automaticPlayback = useRecoilValue(store.automaticPlayback);
+  const [webSearch, setWebSearch] = useRecoilState(store.webSearch);
 
   const isSearching = useRecoilValue(store.isSearching);
   const [showStopButton, setShowStopButton] = useRecoilState(store.showStopButtonByIndex(index));
@@ -98,14 +92,9 @@ const ChatForm = ({ index = 0 }) => {
   const { endpoint: _endpoint, endpointType } = conversation ?? { endpoint: null };
   const endpoint = endpointType ?? _endpoint;
 
-  const { data: fileConfig = defaultFileConfig } = useGetFileConfig({
-    select: (data) => mergeFileConfig(data),
-  });
-
-  const endpointFileConfig = fileConfig.endpoints[endpoint ?? ''];
   const invalidAssistant = useMemo(
     () =>
-      isAssistantsEndpoint(conversation?.endpoint) &&
+      conversation?.endpoint === 'assistants' &&
       (!(conversation?.assistant_id ?? '') ||
         !assistantMap?.[conversation?.endpoint ?? ''][conversation?.assistant_id ?? '']),
     [conversation?.assistant_id, conversation?.endpoint, assistantMap],
@@ -128,25 +117,29 @@ const ChatForm = ({ index = 0 }) => {
     }
   }, [isSearching, disableInputs]);
 
-  const endpointSupportsFiles: boolean = supportsFiles[endpointType ?? endpoint ?? ''] ?? false;
-  const isUploadDisabled: boolean = endpointFileConfig?.disabled ?? false;
+  const showWebSearchToggle = import.meta.env.VITE_PERPLEXICA_SEARCH_PROMPT === 'true';
 
   const baseClasses =
     'md:py-3.5 m-0 w-full resize-none bg-surface-tertiary py-[13px] placeholder-black/50 dark:placeholder-white/50 [&:has(textarea:focus)]:shadow-[0_2px_6px_rgba(0,0,0,.05)] max-h-[65vh] md:max-h-[75vh]';
 
-  const uploadActive = endpointSupportsFiles && !isUploadDisabled;
-  const speechClass = isRTL
-    ? `pr-${uploadActive ? '12' : '4'} pl-12`
-    : `pl-${uploadActive ? '12' : '4'} pr-12`;
+  const speechClass = isRTL ? 'pr-4 pl-12' : 'pl-12 pr-12';
+
+  const handleSubmit = (data: { text: string }) => {
+    const message = {
+      ...data,
+      ...(showWebSearchToggle ? { webSearch } : {}),
+    };
+    submitMessage(message);
+  };
 
   return (
     <form
-      onSubmit={methods.handleSubmit((data) => submitMessage(data))}
+      onSubmit={methods.handleSubmit(handleSubmit)}
       className="stretch mx-2 flex flex-row gap-3 last:mb-2 md:mx-4 md:last:mb-6 lg:mx-auto lg:max-w-2xl xl:max-w-3xl"
     >
       <div className="relative flex h-full flex-1 items-stretch md:flex-col">
         <div className="flex w-full items-center">
-          {showPlusPopover && !isAssistantsEndpoint(endpoint) && (
+          {showPlusPopover && conversation?.endpoint !== 'assistants' && (
             <Mention
               setShowMentionPopover={setShowPlusPopover}
               newConversation={generateConversation}
@@ -165,6 +158,17 @@ const ChatForm = ({ index = 0 }) => {
           )}
           <PromptsCommand index={index} textAreaRef={textAreaRef} submitPrompt={submitPrompt} />
           <div className="transitional-all relative flex w-full flex-grow flex-col overflow-hidden rounded-3xl bg-surface-tertiary text-text-primary duration-200">
+            {showWebSearchToggle && (
+              <div className="flex items-center gap-2 px-3 py-2 bg-[#1A1D21] border-b border-[#2F3336] text-sm">
+                <Switch
+                  id="web-search"
+                  checked={webSearch}
+                  onCheckedChange={setWebSearch}
+                  className="data-[state=checked]:bg-blue-500"
+                />
+                <label htmlFor="web-search" className="text-gray-300">Web Search</label>
+              </div>
+            )}
             <TextareaHeader addedConvo={addedConvo} setAddedConvo={setAddedConvo} />
             <FileFormWrapper disableInputs={disableInputs}>
               {endpoint && (

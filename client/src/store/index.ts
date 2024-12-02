@@ -13,6 +13,8 @@ import prompts from './prompts';
 import lang from './language';
 import settings from './settings';
 import banner from './banner';
+import webSearch from './webSearch';
+
 export default {
   ...artifacts,
   ...families,
@@ -29,4 +31,5 @@ export default {
   ...lang,
   ...settings,
   ...banner,
+  ...webSearch,
 };

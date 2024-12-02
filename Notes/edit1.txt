@@ -1,0 +1,23 @@
+Implementation Details for Perplexica Web Search Toggle:
+
+State Management:
+Created a new Recoil atom 'webSearch' in store/webSearch.ts to manage the toggle state
+Added the webSearch atom to the main store index for global state access
+Environment Configuration:
+Added PERPLEXICA_SEARCH_PROMPT environment variable to control feature visibility
+When true, the web search toggle is displayed; when false or not set, the prompt remains unmodified
+Frontend accesses this via import.meta.env.VITE_PERPLEXICA_SEARCH_PROMPT
+UI Implementation:
+Modified ChatForm.tsx to add the toggle UI above the input field
+Toggle is wrapped in a dark container (bg-[#1A1D21]) with a bottom border (border-[#2F3336])
+Uses the Switch component from UI library with blue highlight when active
+Positioned above the TextareaAutosize component in the component hierarchy
+Message Submission:
+Enhanced the form submission handler to include webSearch state
+When submitting a message, webSearch state is conditionally included in the message object
+Modified handleSubmit to spread webSearch into message data when the feature is enabled
+Component Integration:
+The toggle state is preserved across component re-renders via Recoil
+The UI is fully integrated with the existing chat interface
+Maintains compatibility with existing message handling system
+This implementation allows for conditional web search capability while maintaining the original functionality when the feature is disabled.

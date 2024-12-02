@@ -143,3 +143,5 @@ playwright-report/
 release/
 .aider*
 .env
+
+Perplexica-Cli
