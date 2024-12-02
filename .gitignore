@@ -104,6 +104,39 @@ auth.json
 # User uploads
 uploads/
 
+# Temp files
+*.swp
+*.swo
+*~
+.tmp
+.temp
+
+# IDE specific files
+.vscode/*
+!.vscode/extensions.json
+.idea
+*.sublime-workspace
+*.sublime-project
+
+# TypeScript
+*.tsbuildinfo
+.tscache/
+
+# Testing
+.nyc_output/
+test-results/
+playwright-report/
+.test-results/
+
+# Misc
+.cache/
+.local/
+*.local
+.history/
+.turbo
+.vercel
+.next
+
 # owner
 release/
 .aider*
