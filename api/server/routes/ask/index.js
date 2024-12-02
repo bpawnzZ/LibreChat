@@ -6,7 +6,7 @@ const bingAI = require('./bingAI');
 const anthropic = require('./anthropic');
 const gptPlugins = require('./gptPlugins');
 const askChatGPTBrowser = require('./askChatGPTBrowser');
-const { isEnabled } = require('~/server/utils');
+const { isEnabled } = require('../../utils');
 const { EModelEndpoint } = require('librechat-data-provider');
 const {
   uaParser,
@@ -16,7 +16,7 @@ const {
   concurrentLimiter,
   messageUserLimiter,
   validateConvoAccess,
-} = require('~/server/middleware');
+} = require('../../middleware');
 
 const { LIMIT_CONCURRENT_MESSAGES, LIMIT_MESSAGE_IP, LIMIT_MESSAGE_USER } = process.env ?? {};
 

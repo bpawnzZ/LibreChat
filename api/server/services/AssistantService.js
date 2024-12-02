@@ -9,13 +9,13 @@ const {
   EModelEndpoint,
   defaultOrderQuery,
 } = require('librechat-data-provider');
-const { retrieveAndProcessFile } = require('~/server/services/Files/process');
-const { processRequiredActions } = require('~/server/services/ToolService');
-const { createOnProgress, sendMessage, sleep } = require('~/server/utils');
-const { RunManager, waitForRun } = require('~/server/services/Runs');
-const { processMessages } = require('~/server/services/Threads');
-const { TextStream } = require('~/app/clients');
-const { logger } = require('~/config');
+const { retrieveAndProcessFile } = require('../services/Files/process');
+const { processRequiredActions } = require('../services/ToolService');
+const { createOnProgress, sendMessage, sleep } = require('../utils');
+const { RunManager, waitForRun } = require('../services/Runs');
+const { processMessages } = require('../services/Threads');
+const { TextStream } = require('../../app/clients');
+const { logger } = require('../../config');
 
 /**
  * Sorts, processes, and flattens messages to a single string.

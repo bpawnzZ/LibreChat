@@ -1,6 +1,6 @@
 const { EModelEndpoint, AuthKeys } = require('librechat-data-provider');
-const { getUserKey, checkUserKeyExpiry } = require('~/server/services/UserService');
-const { GoogleClient } = require('~/app');
+const { getUserKey, checkUserKeyExpiry } = require('../../../services/UserService');
+const { GoogleClient } = require('../../../../app');
 
 const initializeClient = async ({ req, res, endpointOption }) => {
   const { GOOGLE_KEY, GOOGLE_REVERSE_PROXY, PROXY } = process.env;
@@ -15,7 +15,7 @@ const initializeClient = async ({ req, res, endpointOption }) => {
 
   let serviceKey = {};
   try {
-    serviceKey = require('~/data/auth.json');
+    serviceKey = require('../../../../data/auth.json');
   } catch (e) {
     // Do nothing
   }

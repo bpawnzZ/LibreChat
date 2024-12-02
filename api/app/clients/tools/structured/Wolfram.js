@@ -2,7 +2,7 @@
 const axios = require('axios');
 const { z } = require('zod');
 const { Tool } = require('@langchain/core/tools');
-const { logger } = require('~/config');
+const { logger } = require('../../../../config');
 
 class WolframAlphaAPI extends Tool {
   constructor(fields) {

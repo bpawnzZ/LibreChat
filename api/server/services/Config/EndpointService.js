@@ -1,5 +1,5 @@
 const { EModelEndpoint } = require('librechat-data-provider');
-const { isUserProvided, generateConfig } = require('~/server/utils');
+const { isUserProvided, generateConfig } = require('../../utils');
 
 const {
   OPENAI_API_KEY: openAIApiKey,

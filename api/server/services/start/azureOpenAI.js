@@ -3,7 +3,7 @@ const {
   validateAzureGroups,
   mapModelToAzureConfig,
 } = require('librechat-data-provider');
-const { logger } = require('~/config');
+const { logger } = require('../../../config');
 
 /**
  * Sets up the Azure OpenAI configuration from the config (`librechat.yaml`) file.

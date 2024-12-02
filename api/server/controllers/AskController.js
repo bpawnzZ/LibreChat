@@ -1,10 +1,10 @@
 const throttle = require('lodash/throttle');
 const { getResponseSender, Constants, CacheKeys, Time } = require('librechat-data-provider');
-const { createAbortController, handleAbortError } = require('~/server/middleware');
-const { sendMessage, createOnProgress } = require('~/server/utils');
-const { getLogStores } = require('~/cache');
-const { saveMessage } = require('~/models');
-const { logger } = require('~/config');
+const { createAbortController, handleAbortError } = require('../middleware');
+const { sendMessage, createOnProgress } = require('../utils');
+const { getLogStores } = require('../../cache');
+const { saveMessage } = require('../../models');
+const { logger } = require('../../config');
 
 const AskController = async (req, res, next, initializeClient, addTitle) => {
   let {

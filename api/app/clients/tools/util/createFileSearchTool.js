@@ -2,8 +2,8 @@ const { z } = require('zod');
 const axios = require('axios');
 const { tool } = require('@langchain/core/tools');
 const { Tools, EToolResources } = require('librechat-data-provider');
-const { getFiles } = require('~/models/File');
-const { logger } = require('~/config');
+const { getFiles } = require('../../../../models/File');
+const { logger } = require('../../../../config');
 
 /**
  *

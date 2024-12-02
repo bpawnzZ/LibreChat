@@ -1,5 +1,5 @@
 const { Readable } = require('stream');
-const { logger } = require('~/config');
+const { logger } = require('../../config');
 
 class TextStream extends Readable {
   constructor(text, options = {}) {

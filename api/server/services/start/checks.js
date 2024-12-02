@@ -3,8 +3,8 @@ const {
   deprecatedAzureVariables,
   conflictingAzureVariables,
 } = require('librechat-data-provider');
-const { isEnabled, checkEmailConfig } = require('~/server/utils');
-const { logger } = require('~/config');
+const { isEnabled, checkEmailConfig } = require('../../utils');
+const { logger } = require('../../../config');
 
 const secretDefaults = {
   CREDS_KEY: 'f34be427ebb29de8d88c107a71546019685ed8b241d8f2ed00c3df97ad2566f0',

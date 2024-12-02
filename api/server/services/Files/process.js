@@ -18,16 +18,16 @@ const {
   isAssistantsEndpoint,
 } = require('librechat-data-provider');
 const { EnvVar } = require('@librechat/agents');
-const { addResourceFileId, deleteResourceFileId } = require('~/server/controllers/assistants/v2');
-const { convertImage, resizeAndConvert } = require('~/server/services/Files/images');
-const { addAgentResourceFile, removeAgentResourceFile } = require('~/models/Agent');
-const { getOpenAIClient } = require('~/server/controllers/assistants/helpers');
-const { createFile, updateFileUsage, deleteFiles } = require('~/models/File');
-const { loadAuthValues } = require('~/app/clients/tools/util');
-const { LB_QueueAsyncCall } = require('~/server/utils/queue');
+const { addResourceFileId, deleteResourceFileId } = require('../../controllers/assistants/v2');
+const { convertImage, resizeAndConvert } = require('../../services/Files/images');
+const { addAgentResourceFile, removeAgentResourceFile } = require('../../../models/Agent');
+const { getOpenAIClient } = require('../../controllers/assistants/helpers');
+const { createFile, updateFileUsage, deleteFiles } = require('../../../models/File');
+const { loadAuthValues } = require('../../../app/clients/tools/util');
+const { LB_QueueAsyncCall } = require('../../utils/queue');
 const { getStrategyFunctions } = require('./strategies');
-const { determineFileType } = require('~/server/utils');
-const { logger } = require('~/config');
+const { determineFileType } = require('../../utils');
+const { logger } = require('../../../config');
 
 const processFiles = async (files) => {
   const promises = [];

@@ -7,9 +7,9 @@ const {
 } = require('librechat-data-provider');
 const {
   initializeClient: initAzureClient,
-} = require('~/server/services/Endpoints/azureAssistants');
-const { initializeClient } = require('~/server/services/Endpoints/assistants');
-const { getLogStores } = require('~/cache');
+} = require('../../services/Endpoints/azureAssistants');
+const { initializeClient } = require('../../services/Endpoints/assistants');
+const { getLogStores } = require('../../../cache');
 
 /**
  * @param {Express.Request} req

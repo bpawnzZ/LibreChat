@@ -26,9 +26,9 @@ const {
   getAllMessagesUpToParent,
   getMessagesUpToTargetLevel,
 } = require('./fork');
-const { getConvo, bulkSaveConvos } = require('~/models/Conversation');
-const { getMessages, bulkSaveMessages } = require('~/models/Message');
-const BaseClient = require('~/app/clients/BaseClient');
+const { getConvo, bulkSaveConvos } = require('../../../models/Conversation');
+const { getMessages, bulkSaveMessages } = require('../../../models/Message');
+const BaseClient = require('../../../app/clients/BaseClient');
 
 /**
  *

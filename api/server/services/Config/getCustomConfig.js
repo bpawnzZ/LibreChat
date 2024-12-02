@@ -1,7 +1,7 @@
 const { CacheKeys, EModelEndpoint } = require('librechat-data-provider');
-const { normalizeEndpointName } = require('~/server/utils');
+const { normalizeEndpointName } = require('../../utils');
 const loadCustomConfig = require('./loadCustomConfig');
-const getLogStores = require('~/cache/getLogStores');
+const getLogStores = require('../../../cache/getLogStores');
 
 /**
  * Retrieves the configuration object

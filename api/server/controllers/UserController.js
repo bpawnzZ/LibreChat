@@ -7,15 +7,15 @@ const {
   deletePresets,
   deleteMessages,
   deleteUserById,
-} = require('~/models');
-const User = require('~/models/User');
-const { updateUserPluginAuth, deleteUserPluginAuth } = require('~/server/services/PluginService');
-const { updateUserPluginsService, deleteUserKey } = require('~/server/services/UserService');
-const { verifyEmail, resendVerificationEmail } = require('~/server/services/AuthService');
-const { processDeleteRequest } = require('~/server/services/Files/process');
-const { deleteAllSharedLinks } = require('~/models/Share');
-const { Transaction } = require('~/models/Transaction');
-const { logger } = require('~/config');
+} = require('../../models');
+const User = require('../../models/User');
+const { updateUserPluginAuth, deleteUserPluginAuth } = require('../services/PluginService');
+const { updateUserPluginsService, deleteUserKey } = require('../services/UserService');
+const { verifyEmail, resendVerificationEmail } = require('../services/AuthService');
+const { processDeleteRequest } = require('../services/Files/process');
+const { deleteAllSharedLinks } = require('../../models/Share');
+const { Transaction } = require('../../models/Transaction');
+const { logger } = require('../../config');
 
 const getUserController = async (req, res) => {
   res.status(200).send(req.user);

@@ -1,6 +1,6 @@
 const { HttpsProxyAgent } = require('https-proxy-agent');
 const { resolveHeaders } = require('librechat-data-provider');
-const { createLLM } = require('~/app/clients/llm');
+const { createLLM } = require('../../../app/clients/llm');
 
 /**
  * Initializes and returns a Language Learning Model (LLM) instance.

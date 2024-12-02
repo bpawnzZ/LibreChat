@@ -1,6 +1,6 @@
 const firebase = require('firebase/app');
 const { getStorage } = require('firebase/storage');
-const { logger } = require('~/config');
+const { logger } = require('../../../../config');
 
 let i = 0;
 let firebaseApp = null;

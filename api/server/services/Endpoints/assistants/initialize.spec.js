@@ -1,9 +1,9 @@
 // const OpenAI = require('openai');
 const { HttpsProxyAgent } = require('https-proxy-agent');
 const { ErrorTypes } = require('librechat-data-provider');
-const { getUserKey, getUserKeyExpiry, getUserKeyValues } = require('~/server/services/UserService');
+const { getUserKey, getUserKeyExpiry, getUserKeyValues } = require('../../../services/UserService');
 const initializeClient = require('./initalize');
-// const { OpenAIClient } = require('~/app');
+// const { OpenAIClient } = require('../../../../app');
 
 jest.mock('~/server/services/UserService', () => ({
   getUserKey: jest.fn(),

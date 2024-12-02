@@ -1,6 +1,6 @@
 const { removeNullishValues, bedrockInputParser } = require('librechat-data-provider');
-const generateArtifactsPrompt = require('~/app/clients/prompts/artifacts');
-const { logger } = require('~/config');
+const generateArtifactsPrompt = require('../../../../app/clients/prompts/artifacts');
+const { logger } = require('../../../../config');
 
 const buildOptions = (endpoint, parsedBody) => {
   const {

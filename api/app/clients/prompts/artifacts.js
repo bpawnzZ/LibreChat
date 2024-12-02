@@ -1,7 +1,7 @@
 const dedent = require('dedent');
 const { EModelEndpoint, ArtifactModes } = require('librechat-data-provider');
-const { generateShadcnPrompt } = require('~/app/clients/prompts/shadcn-docs/generate');
-const { components } = require('~/app/clients/prompts/shadcn-docs/components');
+const { generateShadcnPrompt } = require('../../clients/prompts/shadcn-docs/generate');
+const { components } = require('../../clients/prompts/shadcn-docs/components');
 
 // eslint-disable-next-line no-unused-vars
 const artifactsPromptV1 = dedent`The assistant can create and reference artifacts during conversations.

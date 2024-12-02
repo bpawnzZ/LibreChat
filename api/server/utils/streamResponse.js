@@ -1,8 +1,8 @@
 const crypto = require('crypto');
 const { parseConvo } = require('librechat-data-provider');
-const { saveMessage, getMessages } = require('~/models/Message');
-const { getConvo } = require('~/models/Conversation');
-const { logger } = require('~/config');
+const { saveMessage, getMessages } = require('../../models/Message');
+const { getConvo } = require('../../models/Conversation');
+const { logger } = require('../../config');
 
 /**
  * Sends error data in Server Sent Events format and ends the response.

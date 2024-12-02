@@ -9,13 +9,13 @@ const {
   getUserById,
   generateToken,
   deleteUserById,
-} = require('~/models/userMethods');
-const { createToken, findToken, deleteTokens, Session } = require('~/models');
-const { isEnabled, checkEmailConfig, sendEmail } = require('~/server/utils');
-const { registerSchema } = require('~/strategies/validators');
-const { hashToken } = require('~/server/utils/crypto');
+} = require('../../models/userMethods');
+const { createToken, findToken, deleteTokens, Session } = require('../../models');
+const { isEnabled, checkEmailConfig, sendEmail } = require('../utils');
+const { registerSchema } = require('../../strategies/validators');
+const { hashToken } = require('../utils/crypto');
 const isDomainAllowed = require('./isDomainAllowed');
-const { logger } = require('~/config');
+const { logger } = require('../../config');
 
 const domains = {
   client: process.env.DOMAIN_CLIENT,

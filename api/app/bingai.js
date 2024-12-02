@@ -1,8 +1,8 @@
 require('dotenv').config();
 const { KeyvFile } = require('keyv-file');
 const { EModelEndpoint } = require('librechat-data-provider');
-const { getUserKey, checkUserKeyExpiry } = require('~/server/services/UserService');
-const { logger } = require('~/config');
+const { getUserKey, checkUserKeyExpiry } = require('../server/services/UserService');
+const { logger } = require('../config');
 
 const askBing = async ({
   text,

@@ -5,9 +5,9 @@ const {
   getUserKeyValues,
   getUserKeyExpiry,
   checkUserKeyExpiry,
-} = require('~/server/services/UserService');
-const OpenAIClient = require('~/app/clients/OpenAIClient');
-const { isUserProvided } = require('~/server/utils');
+} = require('../../../services/UserService');
+const OpenAIClient = require('../../../../app/clients/OpenAIClient');
+const { isUserProvided } = require('../../../utils');
 
 const initializeClient = async ({ req, res, endpointOption, version, initAppClient = false }) => {
   const { PROXY, OPENAI_ORGANIZATION, ASSISTANTS_API_KEY, ASSISTANTS_BASE_URL } = process.env;

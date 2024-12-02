@@ -1,11 +1,11 @@
 const { CacheKeys, RunStatus, isUUID } = require('librechat-data-provider');
-const { initializeClient } = require('~/server/services/Endpoints/assistants');
-const { checkMessageGaps, recordUsage } = require('~/server/services/Threads');
-const { deleteMessages } = require('~/models/Message');
-const { getConvo } = require('~/models/Conversation');
-const getLogStores = require('~/cache/getLogStores');
-const { sendMessage } = require('~/server/utils');
-const { logger } = require('~/config');
+const { initializeClient } = require('../services/Endpoints/assistants');
+const { checkMessageGaps, recordUsage } = require('../services/Threads');
+const { deleteMessages } = require('../../models/Message');
+const { getConvo } = require('../../models/Conversation');
+const getLogStores = require('../../cache/getLogStores');
+const { sendMessage } = require('../utils');
+const { logger } = require('../../config');
 
 const three_minutes = 1000 * 60 * 3;
 

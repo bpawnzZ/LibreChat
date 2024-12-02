@@ -7,13 +7,13 @@ const {
   updateAgent,
   deleteAgent,
   getListAgents,
-} = require('~/models/Agent');
-const { uploadImageBuffer, filterFile } = require('~/server/services/Files/process');
-const { getStrategyFunctions } = require('~/server/services/Files/strategies');
-const { getProjectByName } = require('~/models/Project');
-const { updateAgentProjects } = require('~/models/Agent');
-const { deleteFileByFilter } = require('~/models/File');
-const { logger } = require('~/config');
+} = require('../../../models/Agent');
+const { uploadImageBuffer, filterFile } = require('../../services/Files/process');
+const { getStrategyFunctions } = require('../../services/Files/strategies');
+const { getProjectByName } = require('../../../models/Project');
+const { updateAgentProjects } = require('../../../models/Agent');
+const { deleteFileByFilter } = require('../../../models/File');
+const { logger } = require('../../../config');
 
 const systemTools = {
   [Tools.execute_code]: true,

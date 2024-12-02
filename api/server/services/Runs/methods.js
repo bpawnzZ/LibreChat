@@ -1,6 +1,6 @@
 const axios = require('axios');
 const { EModelEndpoint } = require('librechat-data-provider');
-const { logAxiosError } = require('~/utils');
+const { logAxiosError } = require('../../../utils');
 
 /**
  * @typedef {Object} RetrieveOptions

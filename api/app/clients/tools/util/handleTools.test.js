@@ -21,8 +21,8 @@ jest.mock('~/server/services/PluginService', () => mockPluginService);
 const { BaseLLM } = require('@langchain/openai');
 const { Calculator } = require('@langchain/community/tools/calculator');
 
-const User = require('~/models/User');
-const PluginService = require('~/server/services/PluginService');
+const User = require('../../../../models/User');
+const PluginService = require('../../../../server/services/PluginService');
 const { validateTools, loadTools, loadToolWithAuth } = require('./handleTools');
 const { StructuredSD, availableTools, DALLE3 } = require('../');
 

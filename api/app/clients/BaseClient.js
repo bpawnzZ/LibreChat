@@ -9,13 +9,13 @@ const {
   CacheKeys,
   Time,
 } = require('librechat-data-provider');
-const { getMessages, saveMessage, updateMessage, saveConvo } = require('~/models');
-const { addSpaceIfNeeded, isEnabled } = require('~/server/utils');
-const checkBalance = require('~/models/checkBalance');
-const { getFiles } = require('~/models/File');
-const { getLogStores } = require('~/cache');
+const { getMessages, saveMessage, updateMessage, saveConvo } = require('../../models');
+const { addSpaceIfNeeded, isEnabled } = require('../../server/utils');
+const checkBalance = require('../../models/checkBalance');
+const { getFiles } = require('../../models/File');
+const { getLogStores } = require('../../cache');
 const TextStream = require('./TextStream');
-const { logger } = require('~/config');
+const { logger } = require('../../config');
 
 class BaseClient {
   constructor(apiKey, options = {}) {

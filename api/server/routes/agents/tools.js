@@ -1,6 +1,6 @@
 const express = require('express');
-const { getAvailableTools } = require('~/server/controllers/PluginController');
-const { verifyToolAuth } = require('~/server/controllers/tools');
+const { getAvailableTools } = require('../../controllers/PluginController');
+const { verifyToolAuth } = require('../../controllers/tools');
 
 const router = express.Router();
 

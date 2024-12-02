@@ -3,7 +3,7 @@ const path = require('path');
 const sharp = require('sharp');
 const { resizeImageBuffer } = require('./resize');
 const { getStrategyFunctions } = require('../strategies');
-const { logger } = require('~/config');
+const { logger } = require('../../../../config');
 
 /**
  * Converts an image file or buffer to target output type with specified resolution.

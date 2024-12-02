@@ -1,5 +1,5 @@
-const { getInvite } = require('~/models/inviteUser');
-const { deleteTokens } = require('~/models/Token');
+const { getInvite } = require('../../models/inviteUser');
+const { deleteTokens } = require('../../models/Token');
 
 async function checkInviteUser(req, res, next) {
   const token = req.body.token;

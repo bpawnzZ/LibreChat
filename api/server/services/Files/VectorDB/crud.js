@@ -2,8 +2,8 @@ const fs = require('fs');
 const axios = require('axios');
 const FormData = require('form-data');
 const { FileSources } = require('librechat-data-provider');
-const { logAxiosError } = require('~/utils');
-const { logger } = require('~/config');
+const { logAxiosError } = require('../../../../utils');
+const { logger } = require('../../../../config');
 
 /**
  * Deletes a file from the vector database. This function takes a file object, constructs the full path, and

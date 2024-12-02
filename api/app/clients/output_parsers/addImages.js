@@ -1,4 +1,4 @@
-const { logger } = require('~/config');
+const { logger } = require('../../../config');
 
 /**
  * The `addImages` function corrects any erroneous image URLs in the `responseMessage.text`

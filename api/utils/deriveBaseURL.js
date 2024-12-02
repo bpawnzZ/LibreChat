@@ -1,4 +1,4 @@
-const { logger } = require('~/config');
+const { logger } = require('../config');
 
 /**
  * Extracts the base URL from the provided URL.

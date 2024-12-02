@@ -1,6 +1,6 @@
 const { CacheKeys } = require('librechat-data-provider');
-const { loadOverrideConfig } = require('~/server/services/Config');
-const { getLogStores } = require('~/cache');
+const { loadOverrideConfig } = require('../services/Config');
+const { getLogStores } = require('../../cache');
 
 async function overrideController(req, res) {
   const cache = getLogStores(CacheKeys.CONFIG_STORE);

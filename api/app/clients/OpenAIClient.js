@@ -20,7 +20,7 @@ const {
   getModelMaxTokens,
   genAzureChatCompletion,
   getModelMaxOutputTokens,
-} = require('~/utils');
+} = require('../../utils');
 const {
   truncateText,
   formatMessage,
@@ -28,9 +28,9 @@ const {
   titleInstruction,
   createContextHandlers,
 } = require('./prompts');
-const { encodeAndFormat } = require('~/server/services/Files/images/encode');
-const { spendTokens } = require('~/models/spendTokens');
-const { isEnabled, sleep } = require('~/server/utils');
+const { encodeAndFormat } = require('../../server/services/Files/images/encode');
+const { spendTokens } = require('../../models/spendTokens');
+const { isEnabled, sleep } = require('../../server/utils');
 const { handleOpenAIErrors } = require('./tools/util');
 const { createLLM, RunManager } = require('./llm');
 const ChatGPTClient = require('./ChatGPTClient');
@@ -38,7 +38,7 @@ const { summaryBuffer } = require('./memory');
 const { runTitleChain } = require('./chains');
 const { tokenSplit } = require('./document');
 const BaseClient = require('./BaseClient');
-const { logger } = require('~/config');
+const { logger } = require('../../config');
 
 // Cache to store Tiktoken instances
 const tokenizersCache = {};

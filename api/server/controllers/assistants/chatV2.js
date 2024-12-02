@@ -16,20 +16,20 @@ const {
   saveUserMessage,
   addThreadMetadata,
   saveAssistantMessage,
-} = require('~/server/services/Threads');
-const { runAssistant, createOnTextProgress } = require('~/server/services/AssistantService');
-const { sendMessage, sleep, isEnabled, countTokens } = require('~/server/utils');
-const { createErrorHandler } = require('~/server/controllers/assistants/errors');
-const validateAuthor = require('~/server/middleware/assistants/validateAuthor');
-const { createRun, StreamRunManager } = require('~/server/services/Runs');
-const { addTitle } = require('~/server/services/Endpoints/assistants');
-const { getTransactions } = require('~/models/Transaction');
-const checkBalance = require('~/models/checkBalance');
-const { getConvo } = require('~/models/Conversation');
-const getLogStores = require('~/cache/getLogStores');
-const { getModelMaxTokens } = require('~/utils');
+} = require('../../services/Threads');
+const { runAssistant, createOnTextProgress } = require('../../services/AssistantService');
+const { sendMessage, sleep, isEnabled, countTokens } = require('../../utils');
+const { createErrorHandler } = require('../../controllers/assistants/errors');
+const validateAuthor = require('../../middleware/assistants/validateAuthor');
+const { createRun, StreamRunManager } = require('../../services/Runs');
+const { addTitle } = require('../../services/Endpoints/assistants');
+const { getTransactions } = require('../../../models/Transaction');
+const checkBalance = require('../../../models/checkBalance');
+const { getConvo } = require('../../../models/Conversation');
+const getLogStores = require('../../../cache/getLogStores');
+const { getModelMaxTokens } = require('../../../utils');
 const { getOpenAIClient } = require('./helpers');
-const { logger } = require('~/config');
+const { logger } = require('../../../config');
 
 const ten_minutes = 1000 * 60 * 10;
 

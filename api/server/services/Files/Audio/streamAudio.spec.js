@@ -57,7 +57,7 @@ describe('processChunks', () => {
     mockMessageCache = {
       get: jest.fn(),
     };
-    require('~/cache/getLogStores').mockReturnValue(mockMessageCache);
+    require('../../../../cache/getLogStores').mockReturnValue(mockMessageCache);
     processChunks = createChunkProcessor('message-id');
   });
 

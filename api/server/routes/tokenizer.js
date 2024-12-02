@@ -1,8 +1,8 @@
 const express = require('express');
 const router = express.Router();
-const requireJwtAuth = require('~/server/middleware/requireJwtAuth');
-const { countTokens } = require('~/server/utils');
-const { logger } = require('~/config');
+const requireJwtAuth = require('../middleware/requireJwtAuth');
+const { countTokens } = require('../utils');
+const { logger } = require('../../config');
 
 router.post('/', requireJwtAuth, async (req, res) => {
   try {

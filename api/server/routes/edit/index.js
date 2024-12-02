@@ -4,7 +4,7 @@ const custom = require('./custom');
 const google = require('./google');
 const anthropic = require('./anthropic');
 const gptPlugins = require('./gptPlugins');
-const { isEnabled } = require('~/server/utils');
+const { isEnabled } = require('../../utils');
 const { EModelEndpoint } = require('librechat-data-provider');
 const {
   checkBan,
@@ -14,7 +14,7 @@ const {
   concurrentLimiter,
   messageUserLimiter,
   validateConvoAccess,
-} = require('~/server/middleware');
+} = require('../../middleware');
 
 const { LIMIT_CONCURRENT_MESSAGES, LIMIT_MESSAGE_IP, LIMIT_MESSAGE_USER } = process.env ?? {};
 

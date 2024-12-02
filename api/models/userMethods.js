@@ -1,6 +1,6 @@
 const bcrypt = require('bcryptjs');
-const signPayload = require('~/server/services/signPayload');
-const { isEnabled } = require('~/server/utils/handleText');
+const signPayload = require('../server/services/signPayload');
+const { isEnabled } = require('../server/utils/handleText');
 const Balance = require('./Balance');
 const User = require('./User');
 

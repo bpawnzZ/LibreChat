@@ -137,7 +137,7 @@ describe('AppService', () => {
 
     await AppService(app);
 
-    const { logger } = require('~/config');
+    const { logger } = require('../../config');
     expect(logger.info).toHaveBeenCalledWith(expect.stringContaining('Outdated Config version'));
   });
 
@@ -507,7 +507,7 @@ describe('AppService updating app.locals and issuing warnings', () => {
     const app = { locals: {} };
     await require('./AppService')(app);
 
-    const { logger } = require('~/config');
+    const { logger } = require('../../config');
     expect(logger.warn).toHaveBeenCalledWith(
       expect.stringContaining(
         'The \'assistants\' endpoint has both \'supportedIds\' and \'excludedIds\' defined.',
@@ -529,7 +529,7 @@ describe('AppService updating app.locals and issuing warnings', () => {
     const app = { locals: {} };
     await require('./AppService')(app);
 
-    const { logger } = require('~/config');
+    const { logger } = require('../../config');
     expect(logger.warn).toHaveBeenCalledWith(
       expect.stringContaining(
         'The \'assistants\' endpoint has both \'privateAssistants\' and \'supportedIds\' or \'excludedIds\' defined.',
@@ -555,7 +555,7 @@ describe('AppService updating app.locals and issuing warnings', () => {
     const app = { locals: {} };
     await require('./AppService')(app);
 
-    const { logger } = require('~/config');
+    const { logger } = require('../../config');
     deprecatedAzureVariables.forEach(({ key, description }) => {
       expect(logger.warn).toHaveBeenCalledWith(
         `The \`${key}\` environment variable (related to ${description}) should not be used in combination with the \`azureOpenAI\` endpoint configuration, as you will experience conflicts and errors.`,
@@ -581,7 +581,7 @@ describe('AppService updating app.locals and issuing warnings', () => {
     const app = { locals: {} };
     await require('./AppService')(app);
 
-    const { logger } = require('~/config');
+    const { logger } = require('../../config');
     conflictingAzureVariables.forEach(({ key }) => {
       expect(logger.warn).toHaveBeenCalledWith(
         `The \`${key}\` environment variable should not be used in combination with the \`azureOpenAI\` endpoint configuration, as you may experience with the defined placeholders for mapping to the current model grouping using the same name.`,

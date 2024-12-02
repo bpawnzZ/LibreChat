@@ -1,6 +1,6 @@
 const express = require('express');
-const AskController = require('~/server/controllers/AskController');
-const { addTitle, initializeClient } = require('~/server/services/Endpoints/openAI');
+const AskController = require('../../controllers/AskController');
+const { addTitle, initializeClient } = require('../../services/Endpoints/openAI');
 const {
   handleAbort,
   setHeaders,
@@ -8,7 +8,7 @@ const {
   validateEndpoint,
   buildEndpointOption,
   moderateText,
-} = require('~/server/middleware');
+} = require('../../middleware');
 
 const router = express.Router();
 router.use(moderateText);

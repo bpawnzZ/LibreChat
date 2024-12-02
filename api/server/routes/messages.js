@@ -1,9 +1,9 @@
 const express = require('express');
 const { ContentTypes } = require('librechat-data-provider');
-const { saveConvo, saveMessage, getMessages, updateMessage, deleteMessages } = require('~/models');
-const { requireJwtAuth, validateMessageReq } = require('~/server/middleware');
-const { countTokens } = require('~/server/utils');
-const { logger } = require('~/config');
+const { saveConvo, saveMessage, getMessages, updateMessage, deleteMessages } = require('../../models');
+const { requireJwtAuth, validateMessageReq } = require('../middleware');
+const { countTokens } = require('../utils');
+const { logger } = require('../../config');
 
 const router = express.Router();
 router.use(requireJwtAuth);

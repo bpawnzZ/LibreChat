@@ -1,4 +1,4 @@
-const { logger } = require('~/config');
+const { logger } = require('../config');
 
 /**
  * Logs Axios errors based on the error object and a custom message.

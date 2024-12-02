@@ -10,10 +10,10 @@ const {
   getUserKeyValues,
   getUserKeyExpiry,
   checkUserKeyExpiry,
-} = require('~/server/services/UserService');
-const OpenAIClient = require('~/app/clients/OpenAIClient');
-const { isUserProvided } = require('~/server/utils');
-const { constructAzureURL } = require('~/utils');
+} = require('../../../services/UserService');
+const OpenAIClient = require('../../../../app/clients/OpenAIClient');
+const { isUserProvided } = require('../../../utils');
+const { constructAzureURL } = require('../../../../utils');
 
 class Files {
   constructor(client) {

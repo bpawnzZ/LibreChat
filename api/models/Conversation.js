@@ -1,6 +1,6 @@
 const Conversation = require('./schema/convoSchema');
 const { getMessages, deleteMessages } = require('./Message');
-const logger = require('~/config/winston');
+const logger = require('../config/winston');
 
 /**
  * Searches for a conversation by conversationId and returns a lean document with only conversationId and user.

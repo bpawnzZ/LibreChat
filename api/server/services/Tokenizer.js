@@ -1,5 +1,5 @@
 const { encoding_for_model: encodingForModel, get_encoding: getEncoding } = require('tiktoken');
-const { logger } = require('~/config');
+const { logger } = require('../../config');
 
 class Tokenizer {
   constructor() {

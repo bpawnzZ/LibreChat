@@ -2,7 +2,7 @@ const jwtDecode = require('jsonwebtoken/decode');
 const { Issuer, Strategy: OpenIDStrategy } = require('openid-client');
 const mongoose = require('mongoose');
 const { MongoMemoryServer } = require('mongodb-memory-server');
-const User = require('~/models/User');
+const User = require('../models/User');
 const setupOpenId = require('./openidStrategy');
 
 jest.mock('jsonwebtoken/decode');

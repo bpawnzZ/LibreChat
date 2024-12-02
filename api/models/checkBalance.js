@@ -1,5 +1,5 @@
 const { ViolationTypes } = require('librechat-data-provider');
-const { logViolation } = require('~/cache');
+const { logViolation } = require('../cache');
 const Balance = require('./Balance');
 /**
  * Checks the balance for a user and determines if they can spend a certain amount.

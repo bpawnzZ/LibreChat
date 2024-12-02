@@ -1,7 +1,7 @@
 const OpenAI = require('openai');
 const DALLE3 = require('../DALLE3');
 
-const { logger } = require('~/config');
+const { logger } = require('../../../../../config');
 
 jest.mock('openai');
 

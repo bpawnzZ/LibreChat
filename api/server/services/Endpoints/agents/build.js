@@ -1,5 +1,5 @@
-const { loadAgent } = require('~/models/Agent');
-const { logger } = require('~/config');
+const { loadAgent } = require('../../../../models/Agent');
+const { logger } = require('../../../../config');
 
 const buildOptions = (req, endpoint, parsedBody) => {
   const { agent_id, instructions, spec, ...model_parameters } = parsedBody;

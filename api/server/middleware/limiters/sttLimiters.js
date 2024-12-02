@@ -1,6 +1,6 @@
 const rateLimit = require('express-rate-limit');
 const { ViolationTypes } = require('librechat-data-provider');
-const logViolation = require('~/cache/logViolation');
+const logViolation = require('../../../cache/logViolation');
 
 const getEnvironmentVariables = () => {
   const STT_IP_MAX = parseInt(process.env.STT_IP_MAX) || 100;

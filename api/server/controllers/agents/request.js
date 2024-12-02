@@ -1,8 +1,8 @@
 const { Constants } = require('librechat-data-provider');
-const { createAbortController, handleAbortError } = require('~/server/middleware');
-const { sendMessage } = require('~/server/utils');
-const { saveMessage } = require('~/models');
-const { logger } = require('~/config');
+const { createAbortController, handleAbortError } = require('../../middleware');
+const { sendMessage } = require('../../utils');
+const { saveMessage } = require('../../../models');
+const { logger } = require('../../../config');
 
 const AgentController = async (req, res, next, initializeClient, addTitle) => {
   let {

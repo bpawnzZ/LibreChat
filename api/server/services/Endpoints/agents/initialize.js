@@ -7,15 +7,15 @@ const {
 const {
   getDefaultHandlers,
   createToolEndCallback,
-} = require('~/server/controllers/agents/callbacks');
-const initAnthropic = require('~/server/services/Endpoints/anthropic/initialize');
-const getBedrockOptions = require('~/server/services/Endpoints/bedrock/options');
-const initOpenAI = require('~/server/services/Endpoints/openAI/initialize');
-const initCustom = require('~/server/services/Endpoints/custom/initialize');
-const { getCustomEndpointConfig } = require('~/server/services/Config');
-const { loadAgentTools } = require('~/server/services/ToolService');
-const AgentClient = require('~/server/controllers/agents/client');
-const { getModelMaxTokens } = require('~/utils');
+} = require('../../../controllers/agents/callbacks');
+const initAnthropic = require('../../../services/Endpoints/anthropic/initialize');
+const getBedrockOptions = require('../../../services/Endpoints/bedrock/options');
+const initOpenAI = require('../../../services/Endpoints/openAI/initialize');
+const initCustom = require('../../../services/Endpoints/custom/initialize');
+const { getCustomEndpointConfig } = require('../../../services/Config');
+const { loadAgentTools } = require('../../../services/ToolService');
+const AgentClient = require('../../../controllers/agents/client');
+const { getModelMaxTokens } = require('../../../../utils');
 
 const providerConfigMap = {
   [EModelEndpoint.openAI]: initOpenAI,

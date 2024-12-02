@@ -1,5 +1,5 @@
 const express = require('express');
-const { createTTSLimiters, createSTTLimiters } = require('~/server/middleware');
+const { createTTSLimiters, createSTTLimiters } = require('../../../middleware');
 
 const stt = require('./stt');
 const tts = require('./tts');

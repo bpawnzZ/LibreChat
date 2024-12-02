@@ -1,12 +1,12 @@
 const { EModelEndpoint } = require('librechat-data-provider');
-const { useAzurePlugins } = require('~/server/services/Config/EndpointService').config;
+const { useAzurePlugins } = require('../../services/Config/EndpointService').config;
 const {
   getOpenAIModels,
   getGoogleModels,
   getBedrockModels,
   getAnthropicModels,
   getChatGPTBrowserModels,
-} = require('~/server/services/ModelService');
+} = require('../../services/ModelService');
 
 /**
  * Loads the default models for the application.

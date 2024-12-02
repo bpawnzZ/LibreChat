@@ -9,12 +9,12 @@ const {
   AssistantStreamEvents,
   Constants,
 } = require('librechat-data-provider');
-const { retrieveAndProcessFile } = require('~/server/services/Files/process');
-const { processRequiredActions } = require('~/server/services/ToolService');
-const { createOnProgress, sendMessage, sleep } = require('~/server/utils');
-const { processMessages } = require('~/server/services/Threads');
-const { getLogStores } = require('~/cache');
-const { logger } = require('~/config');
+const { retrieveAndProcessFile } = require('../../services/Files/process');
+const { processRequiredActions } = require('../../services/ToolService');
+const { createOnProgress, sendMessage, sleep } = require('../../utils');
+const { processMessages } = require('../../services/Threads');
+const { getLogStores } = require('../../../cache');
+const { logger } = require('../../../config');
 
 /**
  * Implements the StreamRunManager functionality for managing the streaming

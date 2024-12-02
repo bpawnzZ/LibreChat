@@ -16,10 +16,10 @@ const {
   Constants,
   AuthKeys,
 } = require('librechat-data-provider');
-const { encodeAndFormat } = require('~/server/services/Files/images');
-const { getModelMaxTokens } = require('~/utils');
-const { sleep } = require('~/server/utils');
-const { logger } = require('~/config');
+const { encodeAndFormat } = require('../../server/services/Files/images');
+const { getModelMaxTokens } = require('../../utils');
+const { sleep } = require('../../server/utils');
+const { logger } = require('../../config');
 const {
   formatMessage,
   createContextHandlers,

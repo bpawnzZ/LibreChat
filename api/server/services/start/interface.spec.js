@@ -1,5 +1,5 @@
 const { SystemRoles, Permissions, PermissionTypes } = require('librechat-data-provider');
-const { updateAccessPermissions } = require('~/models/Role');
+const { updateAccessPermissions } = require('../../../models/Role');
 const { loadDefaultInterface } = require('./interface');
 
 jest.mock('~/models/Role', () => ({

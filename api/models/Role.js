@@ -9,9 +9,9 @@ const {
   bookmarkPermissionsSchema,
   multiConvoPermissionsSchema,
 } = require('librechat-data-provider');
-const getLogStores = require('~/cache/getLogStores');
-const Role = require('~/models/schema/roleSchema');
-const { logger } = require('~/config');
+const getLogStores = require('../cache/getLogStores');
+const Role = require('./schema/roleSchema');
+const { logger } = require('../config');
 
 /**
  * Retrieve a role by name and convert the found role document to a plain object.

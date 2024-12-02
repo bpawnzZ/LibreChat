@@ -4,11 +4,11 @@ const {
   providerEndpointMap,
   getResponseSender,
 } = require('librechat-data-provider');
-const { getDefaultHandlers } = require('~/server/controllers/agents/callbacks');
-// const { loadAgentTools } = require('~/server/services/ToolService');
-const getOptions = require('~/server/services/Endpoints/bedrock/options');
-const AgentClient = require('~/server/controllers/agents/client');
-const { getModelMaxTokens } = require('~/utils');
+const { getDefaultHandlers } = require('../../../controllers/agents/callbacks');
+// const { loadAgentTools } = require('../../../services/ToolService');
+const getOptions = require('../../../services/Endpoints/bedrock/options');
+const AgentClient = require('../../../controllers/agents/client');
+const { getModelMaxTokens } = require('../../../../utils');
 
 const initializeClient = async ({ req, res, endpointOption }) => {
   if (!endpointOption) {

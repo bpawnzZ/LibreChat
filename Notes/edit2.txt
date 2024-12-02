@@ -1,0 +1,87 @@
+Implementation Details for Perplexica Web Search Integration:
+
+Backend API Implementation:
+
+Created new route: api/server/routes/search/perplexica.js
+Endpoint: POST /api/search/perplexica
+Authentication: Uses requireJwtAuth middleware
+Request format: { query: string }
+Response format: { text: string, sources?: Array<{ metadata: { title: string, url: string } }> }
+Integration with Perplexica backend:
+Base URL: http://100.71.229.63:3001/api/search
+Payload structure:
+{
+  query: string,
+  focusMode: "webSearch",
+  optimizationMode: "speed",
+  chatModel: {
+    provider: "custom_openai",
+    model: "openai/gpt-4o-mini",
+    customOpenAIKey: "sk-FiIu6b1Hyq7TDX-C9phogQ",
+    customOpenAIBaseURL: "https://litellm.2damoon.xyz"
+  },
+  embeddingModel: {
+    provider: "openai",
+    model: "text-embedding-3-small"
+  },
+  history: []
+}
+Frontend Message Handling:
+
+Modified: client/src/hooks/useSubmitMessage.ts
+Added web search handling in submitMessage function
+Message structure for web search:
+// User message
+{
+  text: string,
+  isCreatedByUser: true,
+  messageId: UUID,
+  conversationId: string,
+  parentMessageId: string,
+  error: false
+}
+
+// Assistant message (response)
+{
+  text: string,
+  isCreatedByUser: false,
+  messageId: UUID,
+  conversationId: string,
+  parentMessageId: userMessageId,
+  error: false,
+  sources?: Array<{ metadata: { title: string, url: string } }>
+}
+Error handling includes proper message formatting and state management
+State Management:
+
+Uses existing webSearch atom in store/webSearch.ts
+Toggle state persists across component re-renders
+Integrated with ChatForm component for UI control
+Message submission includes webSearch state when enabled
+Integration Points:
+
+ChatForm.tsx: Renders web search toggle UI
+useSubmitMessage.ts: Handles message routing based on toggle state
+search/index.js: Routes API requests to appropriate handlers
+perplexica.js: Handles communication with Perplexica backend
+Data Flow:
+a. User enables web search toggle
+b. User submits message
+c. Frontend checks webSearch state
+d. If enabled:
+
+Sends request to /api/search/perplexica
+Awaits Perplexica response
+Formats and displays result e. If disabled:
+Uses default chat handling
+Error Handling:
+
+Backend:
+Catches and formats Perplexica API errors
+Handles timeout and connection issues
+Returns structured error responses
+Frontend:
+Displays error messages in chat
+Maintains conversation state on failure
+Provides visual feedback during requests
+This implementation maintains the existing chat functionality while adding web search capabilities through the Perplexica backend. The design follows the project's existing patterns for state management, error handling, and message processing.

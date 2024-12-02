@@ -6,9 +6,9 @@ const {
   updateSharedLink,
   getSharedLinks,
   deleteSharedLink,
-} = require('~/models/Share');
-const requireJwtAuth = require('~/server/middleware/requireJwtAuth');
-const { isEnabled } = require('~/server/utils');
+} = require('../../models/Share');
+const requireJwtAuth = require('../middleware/requireJwtAuth');
+const { isEnabled } = require('../utils');
 const router = express.Router();
 
 /**

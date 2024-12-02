@@ -6,8 +6,8 @@ const {
   ContentTypes,
   EModelEndpoint,
 } = require('librechat-data-provider');
-const { getStrategyFunctions } = require('~/server/services/Files/strategies');
-const { logger } = require('~/config');
+const { getStrategyFunctions } = require('../../../services/Files/strategies');
+const { logger } = require('../../../../config');
 
 /**
  * Fetches an image from a URL and returns its base64 representation.

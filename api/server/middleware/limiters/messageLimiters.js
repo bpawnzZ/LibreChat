@@ -1,6 +1,6 @@
 const rateLimit = require('express-rate-limit');
-const denyRequest = require('~/server/middleware/denyRequest');
-const { logViolation } = require('~/cache');
+const denyRequest = require('../../middleware/denyRequest');
+const { logViolation } = require('../../../cache');
 
 const {
   MESSAGE_IP_MAX = 40,

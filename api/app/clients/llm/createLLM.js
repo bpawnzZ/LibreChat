@@ -1,6 +1,6 @@
 const { ChatOpenAI } = require('@langchain/openai');
-const { sanitizeModelName, constructAzureURL } = require('~/utils');
-const { isEnabled } = require('~/server/utils');
+const { sanitizeModelName, constructAzureURL } = require('../../../utils');
+const { isEnabled } = require('../../../server/utils');
 
 /**
  * Creates a new instance of a language model (LLM) for chat interactions.

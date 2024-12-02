@@ -1,6 +1,6 @@
 const axios = require('axios');
 const { EModelEndpoint, defaultModels } = require('librechat-data-provider');
-const { logger } = require('~/config');
+const { logger } = require('../../config');
 
 const {
   fetchModels,
@@ -107,7 +107,7 @@ describe('fetchModels with createTokenConfig true', () => {
 
   beforeEach(() => {
     // Clears the mock's history before each test
-    const _utils = require('~/utils');
+    const _utils = require('../../utils');
     axios.get.mockResolvedValue({ data });
   });
 
@@ -119,7 +119,7 @@ describe('fetchModels with createTokenConfig true', () => {
       createTokenConfig: true,
     });
 
-    const { processModelData } = require('~/utils');
+    const { processModelData } = require('../../utils');
     expect(processModelData).toHaveBeenCalled();
     expect(processModelData).toHaveBeenCalledWith(data);
   });

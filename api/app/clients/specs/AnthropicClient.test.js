@@ -1,5 +1,5 @@
 const { anthropicSettings } = require('librechat-data-provider');
-const AnthropicClient = require('~/app/clients/AnthropicClient');
+const AnthropicClient = require('../../clients/AnthropicClient');
 
 const HUMAN_PROMPT = '\n\nHuman:';
 const AI_PROMPT = '\n\nAssistant:';

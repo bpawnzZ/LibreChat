@@ -7,10 +7,10 @@ const {
   validateModel,
   // validateEndpoint,
   buildEndpointOption,
-} = require('~/server/middleware');
-const validateConvoAccess = require('~/server/middleware/validate/convoAccess');
-const validateAssistant = require('~/server/middleware/assistants/validate');
-const chatController = require('~/server/controllers/assistants/chatV1');
+} = require('../../middleware');
+const validateConvoAccess = require('../../middleware/validate/convoAccess');
+const validateAssistant = require('../../middleware/assistants/validate');
+const chatController = require('../../controllers/assistants/chatV1');
 
 router.post('/abort', handleAbort());
 

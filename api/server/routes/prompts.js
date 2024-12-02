@@ -13,9 +13,9 @@ const {
   getAllPromptGroups,
   // updatePromptLabels,
   makePromptProduction,
-} = require('~/models/Prompt');
-const { requireJwtAuth, generateCheckAccess } = require('~/server/middleware');
-const { logger } = require('~/config');
+} = require('../../models/Prompt');
+const { requireJwtAuth, generateCheckAccess } = require('../middleware');
+const { logger } = require('../../config');
 
 const router = express.Router();
 

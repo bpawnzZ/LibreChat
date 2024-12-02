@@ -7,8 +7,8 @@ const sharp = require('sharp');
 const { v4: uuidv4 } = require('uuid');
 const { Tool } = require('@langchain/core/tools');
 const { FileContext } = require('librechat-data-provider');
-const paths = require('~/config/paths');
-const { logger } = require('~/config');
+const paths = require('../../../../config/paths');
+const { logger } = require('../../../../config');
 
 class StableDiffusionAPI extends Tool {
   constructor(fields) {

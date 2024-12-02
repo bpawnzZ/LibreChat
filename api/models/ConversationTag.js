@@ -1,6 +1,6 @@
 const ConversationTag = require('./schema/conversationTagSchema');
 const Conversation = require('./schema/convoSchema');
-const logger = require('~/config/winston');
+const logger = require('../config/winston');
 
 /**
  * Retrieves all conversation tags for a user.

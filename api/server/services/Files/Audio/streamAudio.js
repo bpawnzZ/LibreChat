@@ -1,5 +1,5 @@
 const { CacheKeys, findLastSeparatorIndex, SEPARATORS } = require('librechat-data-provider');
-const { getLogStores } = require('~/cache');
+const { getLogStores } = require('../../../../cache');
 
 /**
  * @param {string[]} voiceIds - Array of voice IDs

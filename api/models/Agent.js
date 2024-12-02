@@ -8,7 +8,7 @@ const {
   removeAgentIdsFromProject,
   removeAgentFromAllProjects,
 } = require('./Project');
-const getLogStores = require('~/cache/getLogStores');
+const getLogStores = require('../cache/getLogStores');
 const agentSchema = require('./schema/agent');
 
 const Agent = mongoose.model('agent', agentSchema);

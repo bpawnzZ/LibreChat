@@ -13,13 +13,13 @@ const {
   processFileUpload,
   processDeleteRequest,
   processAgentFileUpload,
-} = require('~/server/services/Files/process');
-const { getStrategyFunctions } = require('~/server/services/Files/strategies');
-const { getOpenAIClient } = require('~/server/controllers/assistants/helpers');
-const { loadAuthValues } = require('~/app/clients/tools/util');
-const { getAgent } = require('~/models/Agent');
-const { getFiles } = require('~/models/File');
-const { logger } = require('~/config');
+} = require('../../services/Files/process');
+const { getStrategyFunctions } = require('../../services/Files/strategies');
+const { getOpenAIClient } = require('../../controllers/assistants/helpers');
+const { loadAuthValues } = require('../../../app/clients/tools/util');
+const { getAgent } = require('../../../models/Agent');
+const { getFiles } = require('../../../models/File');
+const { logger } = require('../../../config');
 
 const router = express.Router();
 

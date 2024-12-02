@@ -1,13 +1,13 @@
 const fs = require('fs').promises;
 const { FileContext } = require('librechat-data-provider');
-const { uploadImageBuffer, filterFile } = require('~/server/services/Files/process');
-const validateAuthor = require('~/server/middleware/assistants/validateAuthor');
-const { getStrategyFunctions } = require('~/server/services/Files/strategies');
-const { deleteAssistantActions } = require('~/server/services/ActionService');
-const { updateAssistantDoc, getAssistants } = require('~/models/Assistant');
+const { uploadImageBuffer, filterFile } = require('../../services/Files/process');
+const validateAuthor = require('../../middleware/assistants/validateAuthor');
+const { getStrategyFunctions } = require('../../services/Files/strategies');
+const { deleteAssistantActions } = require('../../services/ActionService');
+const { updateAssistantDoc, getAssistants } = require('../../../models/Assistant');
 const { getOpenAIClient, fetchAssistants } = require('./helpers');
-const { deleteFileByFilter } = require('~/models/File');
-const { logger } = require('~/config');
+const { deleteFileByFilter } = require('../../../models/File');
+const { logger } = require('../../../config');
 
 /**
  * Create an assistant.

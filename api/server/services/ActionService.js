@@ -7,11 +7,11 @@ const {
   actionDomainSeparator,
 } = require('librechat-data-provider');
 const { tool } = require('@langchain/core/tools');
-const { encryptV2, decryptV2 } = require('~/server/utils/crypto');
-const { getActions, deleteActions } = require('~/models/Action');
-const { deleteAssistant } = require('~/models/Assistant');
-const { getLogStores } = require('~/cache');
-const { logger } = require('~/config');
+const { encryptV2, decryptV2 } = require('../utils/crypto');
+const { getActions, deleteActions } = require('../../models/Action');
+const { deleteAssistant } = require('../../models/Assistant');
+const { getLogStores } = require('../../cache');
+const { logger } = require('../../config');
 
 const toolNameRegex = /^[a-zA-Z0-9_-]+$/;
 const replaceSeparatorRegex = new RegExp(actionDomainSeparator, 'g');

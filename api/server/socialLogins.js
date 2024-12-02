@@ -8,9 +8,9 @@ const {
   githubLogin,
   discordLogin,
   facebookLogin,
-} = require('~/strategies');
-const { isEnabled } = require('~/server/utils');
-const { logger } = require('~/config');
+} = require('../strategies');
+const { isEnabled } = require('/utils');
+const { logger } = require('../config');
 
 /**
  *

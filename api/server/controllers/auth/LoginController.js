@@ -1,5 +1,5 @@
-const { setAuthTokens } = require('~/server/services/AuthService');
-const { logger } = require('~/config');
+const { setAuthTokens } = require('../../services/AuthService');
+const { logger } = require('../../../config');
 
 const loginController = async (req, res) => {
   try {

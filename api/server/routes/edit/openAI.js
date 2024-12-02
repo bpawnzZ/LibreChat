@@ -1,6 +1,6 @@
 const express = require('express');
-const EditController = require('~/server/controllers/EditController');
-const { initializeClient } = require('~/server/services/Endpoints/openAI');
+const EditController = require('../../controllers/EditController');
+const { initializeClient } = require('../../services/Endpoints/openAI');
 const {
   handleAbort,
   setHeaders,
@@ -8,7 +8,7 @@ const {
   validateEndpoint,
   buildEndpointOption,
   moderateText,
-} = require('~/server/middleware');
+} = require('../../middleware');
 
 const router = express.Router();
 router.use(moderateText);

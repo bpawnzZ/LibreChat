@@ -10,13 +10,13 @@ const {
   validateEndpoint,
   buildEndpointOption,
   createAbortController,
-} = require('~/server/middleware');
-const { sendMessage, createOnProgress, formatSteps, formatAction } = require('~/server/utils');
-const { initializeClient } = require('~/server/services/Endpoints/gptPlugins');
-const { saveMessage, updateMessage } = require('~/models');
-const { getLogStores } = require('~/cache');
-const { validateTools } = require('~/app');
-const { logger } = require('~/config');
+} = require('../../middleware');
+const { sendMessage, createOnProgress, formatSteps, formatAction } = require('../../utils');
+const { initializeClient } = require('../../services/Endpoints/gptPlugins');
+const { saveMessage, updateMessage } = require('../../../models');
+const { getLogStores } = require('../../../cache');
+const { validateTools } = require('../../../app');
+const { logger } = require('../../../config');
 
 const router = express.Router();
 

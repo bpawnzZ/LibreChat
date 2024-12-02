@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const { uaParser, checkBan, requireJwtAuth } = require('~/server/middleware');
+const { uaParser, checkBan, requireJwtAuth } = require('../../middleware');
 
 const { v1 } = require('./v1');
 const chatV1 = require('./chatV1');

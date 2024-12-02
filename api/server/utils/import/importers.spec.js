@@ -1,11 +1,11 @@
 const fs = require('fs');
 const path = require('path');
 const { EModelEndpoint, Constants, openAISettings } = require('librechat-data-provider');
-const { bulkSaveConvos: _bulkSaveConvos } = require('~/models/Conversation');
+const { bulkSaveConvos: _bulkSaveConvos } = require('../../../models/Conversation');
 const { getImporter, processAssistantMessage } = require('./importers');
 const { ImportBatchBuilder } = require('./importBatchBuilder');
-const { bulkSaveMessages } = require('~/models/Message');
-const getLogStores = require('~/cache/getLogStores');
+const { bulkSaveMessages } = require('../../../models/Message');
+const getLogStores = require('../../../cache/getLogStores');
 
 jest.mock('~/cache/getLogStores');
 const mockedCacheGet = jest.fn();

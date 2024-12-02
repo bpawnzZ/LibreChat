@@ -1,6 +1,6 @@
 const { SystemRoles } = require('librechat-data-provider');
-const { isEnabled } = require('~/server/utils');
-const { logger } = require('~/config');
+const { isEnabled } = require('../utils');
+const { logger } = require('../../config');
 
 /**
  * Checks if the user can delete their account

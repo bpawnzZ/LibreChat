@@ -6,11 +6,11 @@ const {
   AnnotationTypes,
   defaultOrderQuery,
 } = require('librechat-data-provider');
-const { retrieveAndProcessFile } = require('~/server/services/Files/process');
-const { recordMessage, getMessages } = require('~/models/Message');
-const { countTokens, escapeRegExp } = require('~/server/utils');
-const { spendTokens } = require('~/models/spendTokens');
-const { saveConvo } = require('~/models/Conversation');
+const { retrieveAndProcessFile } = require('../../services/Files/process');
+const { recordMessage, getMessages } = require('../../../models/Message');
+const { countTokens, escapeRegExp } = require('../../utils');
+const { spendTokens } = require('../../../models/spendTokens');
+const { saveConvo } = require('../../../models/Conversation');
 
 /**
  * Initializes a new thread or adds messages to an existing thread.

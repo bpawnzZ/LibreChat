@@ -1,4 +1,4 @@
-const { getRoleByName } = require('~/models/Role');
+const { getRoleByName } = require('../../../models/Role');
 
 /**
  * Middleware to check if a user has one or more required permissions, optionally based on `req.body` properties.

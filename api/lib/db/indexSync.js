@@ -1,7 +1,7 @@
 const { MeiliSearch } = require('meilisearch');
-const Conversation = require('~/models/schema/convoSchema');
-const Message = require('~/models/schema/messageSchema');
-const { logger } = require('~/config');
+const Conversation = require('../../models/schema/convoSchema');
+const Message = require('../../models/schema/messageSchema');
+const { logger } = require('../../config');
 
 const searchEnabled = process.env?.SEARCH?.toLowerCase() === 'true';
 let currentTimeout = null;

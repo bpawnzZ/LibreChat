@@ -1,5 +1,5 @@
-const { logger } = require('~/config');
-const { deleteNullOrEmptyConversations } = require('~/models/Conversation');
+const { logger } = require('../../config');
+const { deleteNullOrEmptyConversations } = require('../../models/Conversation');
 const cleanup = async () => {
   try {
     await deleteNullOrEmptyConversations();

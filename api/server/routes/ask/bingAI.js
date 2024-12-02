@@ -1,11 +1,11 @@
 const crypto = require('crypto');
 const express = require('express');
 const { Constants } = require('librechat-data-provider');
-const { handleError, sendMessage, createOnProgress, handleText } = require('~/server/utils');
-const { saveMessage, getConvoTitle, saveConvo, getConvo } = require('~/models');
-const { setHeaders } = require('~/server/middleware');
-const { titleConvoBing, askBing } = require('~/app');
-const { logger } = require('~/config');
+const { handleError, sendMessage, createOnProgress, handleText } = require('../../utils');
+const { saveMessage, getConvoTitle, saveConvo, getConvo } = require('../../../models');
+const { setHeaders } = require('../../middleware');
+const { titleConvoBing, askBing } = require('../../../app');
+const { logger } = require('../../../config');
 
 const router = express.Router();
 

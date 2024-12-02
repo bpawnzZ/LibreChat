@@ -3,7 +3,7 @@ const fs = require('fs').promises;
 const fetch = require('node-fetch');
 const { EImageOutputType } = require('librechat-data-provider');
 const { resizeAndConvert } = require('./resize');
-const { logger } = require('~/config');
+const { logger } = require('../../../../config');
 
 /**
  * Uploads an avatar image for a user. This function can handle various types of input (URL, Buffer, or File object),

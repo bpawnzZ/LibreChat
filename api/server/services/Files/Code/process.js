@@ -8,10 +8,10 @@ const {
   imageExtRegex,
   FileSources,
 } = require('librechat-data-provider');
-const { getStrategyFunctions } = require('~/server/services/Files/strategies');
-const { convertImage } = require('~/server/services/Files/images/convert');
-const { createFile, getFiles, updateFile } = require('~/models/File');
-const { logger } = require('~/config');
+const { getStrategyFunctions } = require('../../../services/Files/strategies');
+const { convertImage } = require('../../../services/Files/images/convert');
+const { createFile, getFiles, updateFile } = require('../../../../models/File');
+const { logger } = require('../../../../config');
 
 /**
  * Process OpenAI image files, convert to target format, save and return file metadata.

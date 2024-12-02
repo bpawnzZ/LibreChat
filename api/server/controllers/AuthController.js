@@ -5,10 +5,10 @@ const {
   resetPassword,
   setAuthTokens,
   requestPasswordReset,
-} = require('~/server/services/AuthService');
-const { hashToken } = require('~/server/utils/crypto');
-const { Session, getUserById } = require('~/models');
-const { logger } = require('~/config');
+} = require('../services/AuthService');
+const { hashToken } = require('../utils/crypto');
+const { Session, getUserById } = require('../../models');
+const { logger } = require('../../config');
 
 const registrationController = async (req, res) => {
   try {

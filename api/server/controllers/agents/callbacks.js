@@ -5,9 +5,9 @@ const {
   ToolEndHandler,
   ChatModelStreamHandler,
 } = require('@librechat/agents');
-const { processCodeOutput } = require('~/server/services/Files/Code/process');
-const { loadAuthValues } = require('~/app/clients/tools/util');
-const { logger } = require('~/config');
+const { processCodeOutput } = require('../../services/Files/Code/process');
+const { loadAuthValues } = require('../../../app/clients/tools/util');
+const { logger } = require('../../../config');
 
 /** @typedef {import('@librechat/agents').Graph} Graph */
 /** @typedef {import('@librechat/agents').EventHandler} EventHandler */

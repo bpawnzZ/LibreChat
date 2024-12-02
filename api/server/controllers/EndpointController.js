@@ -1,6 +1,6 @@
 const { CacheKeys, EModelEndpoint, orderEndpointsConfig } = require('librechat-data-provider');
-const { loadDefaultEndpointsConfig, loadConfigEndpoints } = require('~/server/services/Config');
-const { getLogStores } = require('~/cache');
+const { loadDefaultEndpointsConfig, loadConfigEndpoints } = require('../services/Config');
+const { getLogStores } = require('../../cache');
 
 async function endpointController(req, res) {
   const cache = getLogStores(CacheKeys.CONFIG_STORE);

@@ -1,18 +1,18 @@
 const multer = require('multer');
 const express = require('express');
 const { CacheKeys, EModelEndpoint } = require('librechat-data-provider');
-const { getConvosByPage, deleteConvos, getConvo, saveConvo } = require('~/models/Conversation');
-const { storage, importFileFilter } = require('~/server/routes/files/multer');
-const requireJwtAuth = require('~/server/middleware/requireJwtAuth');
-const { forkConversation } = require('~/server/utils/import/fork');
-const { importConversations } = require('~/server/utils/import');
-const { createImportLimiters } = require('~/server/middleware');
-const getLogStores = require('~/cache/getLogStores');
-const { sleep } = require('~/server/utils');
-const { logger } = require('~/config');
+const { getConvosByPage, deleteConvos, getConvo, saveConvo } = require('../../models/Conversation');
+const { storage, importFileFilter } = require('../routes/files/multer');
+const requireJwtAuth = require('../middleware/requireJwtAuth');
+const { forkConversation } = require('../utils/import/fork');
+const { importConversations } = require('../utils/import');
+const { createImportLimiters } = require('../middleware');
+const getLogStores = require('../../cache/getLogStores');
+const { sleep } = require('../utils');
+const { logger } = require('../../config');
 const assistantClients = {
-  [EModelEndpoint.azureAssistants]: require('~/server/services/Endpoints/azureAssistants'),
-  [EModelEndpoint.assistants]: require('~/server/services/Endpoints/assistants'),
+  [EModelEndpoint.azureAssistants]: require('../services/Endpoints/azureAssistants'),
+  [EModelEndpoint.assistants]: require('../services/Endpoints/assistants'),
 };
 
 const router = express.Router();

@@ -1,4 +1,4 @@
-const { getCustomConfig } = require('~/server/services/Config');
+const { getCustomConfig } = require('../services/Config');
 
 async function isDomainAllowed(email) {
   if (!email) {

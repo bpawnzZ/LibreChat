@@ -7,8 +7,8 @@ const {
   removeGroupFromAllProjects,
 } = require('./Project');
 const { Prompt, PromptGroup } = require('./schema/promptSchema');
-const { escapeRegExp } = require('~/server/utils');
-const { logger } = require('~/config');
+const { escapeRegExp } = require('../server/utils');
+const { logger } = require('../config');
 
 /**
  * Create a pipeline for the aggregation to get prompt groups

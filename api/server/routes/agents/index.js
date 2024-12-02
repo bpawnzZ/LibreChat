@@ -7,7 +7,7 @@ const {
   // concurrentLimiter,
   // messageIpLimiter,
   // messageUserLimiter,
-} = require('~/server/middleware');
+} = require('../../middleware');
 
 const { v1 } = require('./v1');
 const chat = require('./chat');

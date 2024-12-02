@@ -1,5 +1,5 @@
 const { v4 } = require('uuid');
-const { handleAbortError } = require('~/server/middleware/abortMiddleware');
+const { handleAbortError } = require('../../middleware/abortMiddleware');
 
 /**
  * Checks if the assistant is supported or excluded

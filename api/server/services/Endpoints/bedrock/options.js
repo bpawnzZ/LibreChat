@@ -5,8 +5,8 @@ const {
   AuthType,
   removeNullishValues,
 } = require('librechat-data-provider');
-const { getUserKey, checkUserKeyExpiry } = require('~/server/services/UserService');
-const { sleep } = require('~/server/utils');
+const { getUserKey, checkUserKeyExpiry } = require('../../../services/UserService');
+const { sleep } = require('../../../utils');
 
 const getOptions = async ({ req, endpointOption }) => {
   const {

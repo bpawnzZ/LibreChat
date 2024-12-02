@@ -7,10 +7,10 @@ const {
   // validateModel,
   // validateEndpoint,
   buildEndpointOption,
-} = require('~/server/middleware');
-const { initializeClient } = require('~/server/services/Endpoints/agents');
-const AgentController = require('~/server/controllers/agents/request');
-const addTitle = require('~/server/services/Endpoints/agents/title');
+} = require('../../middleware');
+const { initializeClient } = require('../../services/Endpoints/agents');
+const AgentController = require('../../controllers/agents/request');
+const addTitle = require('../../services/Endpoints/agents/title');
 
 router.post('/abort', handleAbort());
 

@@ -1,5 +1,5 @@
 const jwt = require('jsonwebtoken');
-const validateImageRequest = require('~/server/middleware/validateImageRequest');
+const validateImageRequest = require('../../middleware/validateImageRequest');
 
 describe('validateImageRequest middleware', () => {
   let req, res, next;

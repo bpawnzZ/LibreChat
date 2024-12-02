@@ -1,7 +1,7 @@
 const fs = require('fs').promises;
 const { getImporter } = require('./importers');
-const { indexSync } = require('~/lib/db');
-const { logger } = require('~/config');
+const { indexSync } = require('../../../lib/db');
+const { logger } = require('../../../config');
 
 /**
  * Job definition for importing a conversation.

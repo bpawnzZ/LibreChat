@@ -1,8 +1,8 @@
 // gptPlugins/initializeClient.spec.js
 const { EModelEndpoint, ErrorTypes, validateAzureGroups } = require('librechat-data-provider');
-const { getUserKey, getUserKeyValues } = require('~/server/services/UserService');
+const { getUserKey, getUserKeyValues } = require('../../../services/UserService');
 const initializeClient = require('./initialize');
-const { PluginsClient } = require('~/app');
+const { PluginsClient } = require('../../../../app');
 
 // Mock getUserKey since it's the only function we want to mock
 jest.mock('~/server/services/UserService', () => ({

@@ -1,6 +1,6 @@
 const { EnvVar } = require('@librechat/agents');
 const { Tools, AuthType } = require('librechat-data-provider');
-const { loadAuthValues } = require('~/app/clients/tools/util');
+const { loadAuthValues } = require('../../app/clients/tools/util');
 
 const fieldsMap = {
   [Tools.execute_code]: [EnvVar.CODE_API_KEY],

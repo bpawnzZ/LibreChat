@@ -22,20 +22,20 @@ const {
   extractBaseURL,
   // constructAzureURL,
   // genAzureChatCompletion,
-} = require('~/utils');
+} = require('../../../utils');
 const {
   formatMessage,
   formatAgentMessages,
   formatContentStrings,
   createContextHandlers,
-} = require('~/app/clients/prompts');
-const { encodeAndFormat } = require('~/server/services/Files/images/encode');
-const Tokenizer = require('~/server/services/Tokenizer');
-const { spendTokens } = require('~/models/spendTokens');
-const BaseClient = require('~/app/clients/BaseClient');
-// const { sleep } = require('~/server/utils');
+} = require('../../../app/clients/prompts');
+const { encodeAndFormat } = require('../../services/Files/images/encode');
+const Tokenizer = require('../../services/Tokenizer');
+const { spendTokens } = require('../../../models/spendTokens');
+const BaseClient = require('../../../app/clients/BaseClient');
+// const { sleep } = require('../../utils');
 const { createRun } = require('./run');
-const { logger } = require('~/config');
+const { logger } = require('../../../config');
 
 /** @typedef {import('@librechat/agents').MessageContentComplex} MessageContentComplex */
 

@@ -1,5 +1,5 @@
 const { Transaction } = require('./Transaction');
-const { logger } = require('~/config');
+const { logger } = require('../config');
 
 /**
  * Creates up to two transactions to record the spending of tokens.

@@ -1,13 +1,13 @@
 const express = require('express');
-const AskController = require('~/server/controllers/AskController');
-const { initializeClient, addTitle } = require('~/server/services/Endpoints/google');
+const AskController = require('../../controllers/AskController');
+const { initializeClient, addTitle } = require('../../services/Endpoints/google');
 const {
   setHeaders,
   handleAbort,
   validateModel,
   validateEndpoint,
   buildEndpointOption,
-} = require('~/server/middleware');
+} = require('../../middleware');
 
 const router = express.Router();
 

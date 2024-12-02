@@ -1,14 +1,14 @@
 const Keyv = require('keyv');
 const express = require('express');
 const { MeiliSearch } = require('meilisearch');
-const { Conversation, getConvosQueried } = require('~/models/Conversation');
-const requireJwtAuth = require('~/server/middleware/requireJwtAuth');
-const { cleanUpPrimaryKeyValue } = require('~/lib/utils/misc');
-const { reduceHits } = require('~/lib/utils/reduceHits');
-const { isEnabled } = require('~/server/utils');
-const { Message } = require('~/models/Message');
-const keyvRedis = require('~/cache/keyvRedis');
-const { logger } = require('~/config');
+const { Conversation, getConvosQueried } = require('../../models/Conversation');
+const requireJwtAuth = require('../middleware/requireJwtAuth');
+const { cleanUpPrimaryKeyValue } = require('../../lib/utils/misc');
+const { reduceHits } = require('../../lib/utils/reduceHits');
+const { isEnabled } = require('../utils');
+const { Message } = require('../../models/Message');
+const keyvRedis = require('../../cache/keyvRedis');
+const { logger } = require('../../config');
 
 const router = express.Router();
 

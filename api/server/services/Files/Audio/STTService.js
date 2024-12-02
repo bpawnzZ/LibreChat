@@ -3,9 +3,9 @@ const fs = require('fs').promises;
 const FormData = require('form-data');
 const { Readable } = require('stream');
 const { extractEnvVariable, STTProviders } = require('librechat-data-provider');
-const { getCustomConfig } = require('~/server/services/Config');
-const { genAzureEndpoint } = require('~/utils');
-const { logger } = require('~/config');
+const { getCustomConfig } = require('../../../services/Config');
+const { genAzureEndpoint } = require('../../../../utils');
+const { logger } = require('../../../../config');
 
 /**
  * Service class for handling Speech-to-Text (STT) operations.

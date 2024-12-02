@@ -1,8 +1,8 @@
 const mongoose = require('mongoose');
-const { isEnabled } = require('~/server/utils/handleText');
+const { isEnabled } = require('../server/utils/handleText');
 const transactionSchema = require('./schema/transaction');
 const { getMultiplier, getCacheMultiplier } = require('./tx');
-const { logger } = require('~/config');
+const { logger } = require('../config');
 const Balance = require('./Balance');
 const cancelRate = 1.15;
 

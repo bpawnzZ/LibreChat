@@ -8,7 +8,7 @@ const {
   getResponseSender,
   validateVisionModel,
 } = require('librechat-data-provider');
-const { encodeAndFormat } = require('~/server/services/Files/images/encode');
+const { encodeAndFormat } = require('../../server/services/Files/images/encode');
 const {
   truncateText,
   formatMessage,
@@ -17,11 +17,11 @@ const {
   parseParamFromPrompt,
   createContextHandlers,
 } = require('./prompts');
-const { getModelMaxTokens, getModelMaxOutputTokens, matchModelName } = require('~/utils');
-const { spendTokens, spendStructuredTokens } = require('~/models/spendTokens');
-const { sleep } = require('~/server/utils');
+const { getModelMaxTokens, getModelMaxOutputTokens, matchModelName } = require('../../utils');
+const { spendTokens, spendStructuredTokens } = require('../../models/spendTokens');
+const { sleep } = require('../../server/utils');
 const BaseClient = require('./BaseClient');
-const { logger } = require('~/config');
+const { logger } = require('../../config');
 
 const HUMAN_PROMPT = '\n\nHuman:';
 const AI_PROMPT = '\n\nAssistant:';

@@ -1,4 +1,4 @@
-const { logger } = require('~/config');
+const { logger } = require('../config');
 
 function findContent(obj) {
   if (obj && typeof obj === 'object') {

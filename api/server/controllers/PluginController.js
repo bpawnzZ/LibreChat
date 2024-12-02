@@ -1,7 +1,7 @@
 const { promises: fs } = require('fs');
 const { CacheKeys, AuthType } = require('librechat-data-provider');
-const { addOpenAPISpecs } = require('~/app/clients/tools/util/addOpenAPISpecs');
-const { getLogStores } = require('~/cache');
+const { addOpenAPISpecs } = require('../../app/clients/tools/util/addOpenAPISpecs');
+const { getLogStores } = require('../../cache');
 
 /**
  * Filters out duplicate plugins from the list of plugins.

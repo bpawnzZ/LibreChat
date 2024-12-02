@@ -1,4 +1,4 @@
-const { fetchModels } = require('~/server/services/ModelService');
+const { fetchModels } = require('../../services/ModelService');
 const { getCustomConfig } = require('./getCustomConfig');
 const loadConfigModels = require('./loadConfigModels');
 

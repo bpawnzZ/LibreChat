@@ -1,11 +1,11 @@
 const express = require('express');
 const { nanoid } = require('nanoid');
-const { encryptMetadata, domainParser } = require('~/server/services/ActionService');
+const { encryptMetadata, domainParser } = require('../../services/ActionService');
 const { actionDelimiter, EModelEndpoint } = require('librechat-data-provider');
-const { getOpenAIClient } = require('~/server/controllers/assistants/helpers');
-const { updateAction, getActions, deleteAction } = require('~/models/Action');
-const { updateAssistantDoc, getAssistant } = require('~/models/Assistant');
-const { logger } = require('~/config');
+const { getOpenAIClient } = require('../../controllers/assistants/helpers');
+const { updateAction, getActions, deleteAction } = require('../../../models/Action');
+const { updateAssistantDoc, getAssistant } = require('../../../models/Assistant');
+const { logger } = require('../../../config');
 
 const router = express.Router();
 

@@ -1,6 +1,6 @@
 const axios = require('axios');
-const { isEnabled } = require('~/server/utils');
-const { logger } = require('~/config');
+const { isEnabled } = require('../../../server/utils');
+const { logger } = require('../../../config');
 
 const footer = `Use the context as your learned knowledge to better answer the user.
 

@@ -1,8 +1,8 @@
 const path = require('path');
 const fs = require('fs').promises;
 const express = require('express');
-const { filterFile, processImageFile } = require('~/server/services/Files/process');
-const { logger } = require('~/config');
+const { filterFile, processImageFile } = require('../../services/Files/process');
+const { logger } = require('../../../config');
 
 const router = express.Router();
 

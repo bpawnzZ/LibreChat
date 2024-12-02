@@ -3,8 +3,8 @@ const path = require('path');
 const crypto = require('crypto');
 const multer = require('multer');
 const { fileConfig: defaultFileConfig, mergeFileConfig } = require('librechat-data-provider');
-const { sanitizeFilename } = require('~/server/utils/handleText');
-const { getCustomConfig } = require('~/server/services/Config');
+const { sanitizeFilename } = require('../../utils/handleText');
+const { getCustomConfig } = require('../../services/Config');
 
 const storage = multer.diskStorage({
   destination: function (req, file, cb) {

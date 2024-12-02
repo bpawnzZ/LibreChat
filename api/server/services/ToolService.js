@@ -12,13 +12,13 @@ const {
   openapiToFunction,
   validateAndParseOpenAPISpec,
 } = require('librechat-data-provider');
-const { processFileURL, uploadImageBuffer } = require('~/server/services/Files/process');
+const { processFileURL, uploadImageBuffer } = require('../services/Files/process');
 const { loadActionSets, createActionTool, domainParser } = require('./ActionService');
-const { recordUsage } = require('~/server/services/Threads');
-const { loadTools } = require('~/app/clients/tools/util');
-const { redactMessage } = require('~/config/parsers');
-const { sleep } = require('~/server/utils');
-const { logger } = require('~/config');
+const { recordUsage } = require('../services/Threads');
+const { loadTools } = require('../../app/clients/tools/util');
+const { redactMessage } = require('../../config/parsers');
+const { sleep } = require('../utils');
+const { logger } = require('../../config');
 
 /**
  * Loads and formats tools from the specified tool directory.

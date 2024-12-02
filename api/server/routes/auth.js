@@ -4,9 +4,9 @@ const {
   registrationController,
   resetPasswordController,
   resetPasswordRequestController,
-} = require('~/server/controllers/AuthController');
-const { loginController } = require('~/server/controllers/auth/LoginController');
-const { logoutController } = require('~/server/controllers/auth/LogoutController');
+} = require('../controllers/AuthController');
+const { loginController } = require('../controllers/auth/LoginController');
+const { logoutController } = require('../controllers/auth/LogoutController');
 const {
   checkBan,
   loginLimiter,
@@ -18,7 +18,7 @@ const {
   resetPasswordLimiter,
   validateRegistration,
   validatePasswordReset,
-} = require('~/server/middleware');
+} = require('../middleware');
 
 const router = express.Router();
 

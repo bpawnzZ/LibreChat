@@ -1,6 +1,6 @@
-const { createStartHandler } = require('~/app/clients/callbacks');
-const { spendTokens } = require('~/models/spendTokens');
-const { logger } = require('~/config');
+const { createStartHandler } = require('../../clients/callbacks');
+const { spendTokens } = require('../../../models/spendTokens');
+const { logger } = require('../../../config');
 
 class RunManager {
   constructor(fields) {

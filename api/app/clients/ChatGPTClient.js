@@ -10,12 +10,12 @@ const {
   CohereConstants,
   mapModelToAzureConfig,
 } = require('librechat-data-provider');
-const { extractBaseURL, constructAzureURL, genAzureChatCompletion } = require('~/utils');
+const { extractBaseURL, constructAzureURL, genAzureChatCompletion } = require('../../utils');
 const { createContextHandlers } = require('./prompts');
 const { createCoherePayload } = require('./llm');
 const { Agent, ProxyAgent } = require('undici');
 const BaseClient = require('./BaseClient');
-const { logger } = require('~/config');
+const { logger } = require('../../config');
 
 const CHATGPT_MODEL = 'gpt-3.5-turbo';
 const tokenizersCache = {};

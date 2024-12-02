@@ -17,20 +17,20 @@ const {
   checkMessageGaps,
   addThreadMetadata,
   saveAssistantMessage,
-} = require('~/server/services/Threads');
-const { sendResponse, sendMessage, sleep, isEnabled, countTokens } = require('~/server/utils');
-const { runAssistant, createOnTextProgress } = require('~/server/services/AssistantService');
-const validateAuthor = require('~/server/middleware/assistants/validateAuthor');
-const { formatMessage, createVisionPrompt } = require('~/app/clients/prompts');
-const { createRun, StreamRunManager } = require('~/server/services/Runs');
-const { addTitle } = require('~/server/services/Endpoints/assistants');
-const { getTransactions } = require('~/models/Transaction');
-const checkBalance = require('~/models/checkBalance');
-const { getConvo } = require('~/models/Conversation');
-const getLogStores = require('~/cache/getLogStores');
-const { getModelMaxTokens } = require('~/utils');
+} = require('../../services/Threads');
+const { sendResponse, sendMessage, sleep, isEnabled, countTokens } = require('../../utils');
+const { runAssistant, createOnTextProgress } = require('../../services/AssistantService');
+const validateAuthor = require('../../middleware/assistants/validateAuthor');
+const { formatMessage, createVisionPrompt } = require('../../../app/clients/prompts');
+const { createRun, StreamRunManager } = require('../../services/Runs');
+const { addTitle } = require('../../services/Endpoints/assistants');
+const { getTransactions } = require('../../../models/Transaction');
+const checkBalance = require('../../../models/checkBalance');
+const { getConvo } = require('../../../models/Conversation');
+const getLogStores = require('../../../cache/getLogStores');
+const { getModelMaxTokens } = require('../../../utils');
 const { getOpenAIClient } = require('./helpers');
-const { logger } = require('~/config');
+const { logger } = require('../../../config');
 
 const ten_minutes = 1000 * 60 * 10;
 

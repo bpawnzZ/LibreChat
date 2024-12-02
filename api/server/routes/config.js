@@ -1,10 +1,10 @@
 const express = require('express');
 const { CacheKeys, defaultSocialLogins, Constants } = require('librechat-data-provider');
-const { getLdapConfig } = require('~/server/services/Config/ldap');
-const { getProjectByName } = require('~/models/Project');
-const { isEnabled } = require('~/server/utils');
-const { getLogStores } = require('~/cache');
-const { logger } = require('~/config');
+const { getLdapConfig } = require('../services/Config/ldap');
+const { getProjectByName } = require('../../models/Project');
+const { isEnabled } = require('../utils');
+const { getLogStores } = require('../../cache');
+const { logger } = require('../../config');
 
 const router = express.Router();
 const emailLoginEnabled =

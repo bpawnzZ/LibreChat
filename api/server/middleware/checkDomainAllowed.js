@@ -1,5 +1,5 @@
-const { isDomainAllowed } = require('~/server/services/AuthService');
-const { logger } = require('~/config');
+const { isDomainAllowed } = require('../services/AuthService');
+const { logger } = require('../../config');
 
 /**
  * Checks the domain's social login is allowed

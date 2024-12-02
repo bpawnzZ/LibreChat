@@ -1,8 +1,8 @@
 const { v4: uuidv4 } = require('uuid');
 const { EModelEndpoint, Constants, openAISettings, CacheKeys } = require('librechat-data-provider');
 const { createImportBatchBuilder } = require('./importBatchBuilder');
-const getLogStores = require('~/cache/getLogStores');
-const logger = require('~/config/winston');
+const getLogStores = require('../../../cache/getLogStores');
+const logger = require('../../../config/winston');
 
 /**
  * Returns the appropriate importer function based on the provided JSON data.

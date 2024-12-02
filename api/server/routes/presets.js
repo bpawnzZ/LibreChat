@@ -1,8 +1,8 @@
 const express = require('express');
 const crypto = require('crypto');
-const { getPresets, savePreset, deletePresets } = require('~/models');
-const requireJwtAuth = require('~/server/middleware/requireJwtAuth');
-const { logger } = require('~/config');
+const { getPresets, savePreset, deletePresets } = require('../../models');
+const requireJwtAuth = require('../middleware/requireJwtAuth');
+const { logger } = require('../../config');
 
 const router = express.Router();
 router.use(requireJwtAuth);

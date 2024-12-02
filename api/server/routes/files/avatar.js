@@ -1,9 +1,9 @@
 const fs = require('fs').promises;
 const express = require('express');
-const { getStrategyFunctions } = require('~/server/services/Files/strategies');
-const { resizeAvatar } = require('~/server/services/Files/images/avatar');
-const { filterFile } = require('~/server/services/Files/process');
-const { logger } = require('~/config');
+const { getStrategyFunctions } = require('../../services/Files/strategies');
+const { resizeAvatar } = require('../../services/Files/images/avatar');
+const { filterFile } = require('../../services/Files/process');
+const { logger } = require('../../../config');
 
 const router = express.Router();
 

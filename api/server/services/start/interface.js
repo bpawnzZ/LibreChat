@@ -4,8 +4,8 @@ const {
   PermissionTypes,
   removeNullishValues,
 } = require('librechat-data-provider');
-const { updateAccessPermissions } = require('~/models/Role');
-const { logger } = require('~/config');
+const { updateAccessPermissions } = require('../../../models/Role');
+const { logger } = require('../../../config');
 
 /**
  * Loads the default interface object.

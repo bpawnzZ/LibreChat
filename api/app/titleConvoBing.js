@@ -1,6 +1,6 @@
 const throttle = require('lodash/throttle');
-const { isEnabled } = require('~/server/utils');
-const { logger } = require('~/config');
+const { isEnabled } = require('../server/utils');
+const { logger } = require('../config');
 
 const titleConvo = async ({ text, response }) => {
   let title = 'New Chat';

@@ -2,8 +2,8 @@ const fs = require('fs');
 const path = require('path');
 const nodemailer = require('nodemailer');
 const handlebars = require('handlebars');
-const { isEnabled } = require('~/server/utils/handleText');
-const logger = require('~/config/winston');
+const { isEnabled } = require('../utils/handleText');
+const logger = require('../../config/winston');
 
 /**
  * Sends an email using the specified template, subject, and payload.

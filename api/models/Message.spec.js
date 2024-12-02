@@ -35,7 +35,7 @@ const {
   deleteMessages,
   updateMessageText,
   deleteMessagesSince,
-} = require('~/models/Message');
+} = require('/Message');
 
 describe('Message Operations', () => {
   let mockReq;

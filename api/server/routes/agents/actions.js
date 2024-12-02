@@ -1,10 +1,10 @@
 const express = require('express');
 const { nanoid } = require('nanoid');
 const { actionDelimiter } = require('librechat-data-provider');
-const { encryptMetadata, domainParser } = require('~/server/services/ActionService');
-const { updateAction, getActions, deleteAction } = require('~/models/Action');
-const { getAgent, updateAgent } = require('~/models/Agent');
-const { logger } = require('~/config');
+const { encryptMetadata, domainParser } = require('../../services/ActionService');
+const { updateAction, getActions, deleteAction } = require('../../../models/Action');
+const { getAgent, updateAgent } = require('../../../models/Agent');
+const { logger } = require('../../../config');
 
 const router = express.Router();
 

@@ -1,5 +1,5 @@
-const { getCustomConfig } = require('~/server/services/Config');
-const { logger } = require('~/config');
+const { getCustomConfig } = require('../../../services/Config');
+const { logger } = require('../../../../config');
 
 /**
  * This function retrieves the speechTab settings from the custom configuration

@@ -2,10 +2,10 @@ const fs = require('fs');
 const path = require('path');
 const sharp = require('sharp');
 const { resizeImageBuffer } = require('../images/resize');
-const { updateUser } = require('~/models/userMethods');
+const { updateUser } = require('../../../../models/userMethods');
 const { saveBufferToFirebase } = require('./crud');
-const { updateFile } = require('~/models/File');
-const { logger } = require('~/config');
+const { updateFile } = require('../../../../models/File');
+const { logger } = require('../../../../config');
 
 /**
  * Converts an image file to the target format. The function first resizes the image based on the specified

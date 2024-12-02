@@ -5,8 +5,8 @@ const {
   roleDefaults,
   SystemRoles,
 } = require('librechat-data-provider');
-const { checkAdmin, requireJwtAuth } = require('~/server/middleware');
-const { updateRoleByName, getRoleByName } = require('~/models/Role');
+const { checkAdmin, requireJwtAuth } = require('../middleware');
+const { updateRoleByName, getRoleByName } = require('../../models/Role');
 
 const router = express.Router();
 router.use(requireJwtAuth);

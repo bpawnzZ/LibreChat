@@ -1,4 +1,4 @@
-const { logger } = require('~/config');
+const { logger } = require('../../config');
 
 //handle duplicates
 const handleDuplicateKeyError = (err, res) => {

@@ -1,7 +1,7 @@
 const rateLimit = require('express-rate-limit');
 const { ViolationTypes } = require('librechat-data-provider');
-const { removePorts } = require('~/server/utils');
-const { logViolation } = require('~/cache');
+const { removePorts } = require('../../utils');
+const { logViolation } = require('../../../cache');
 
 const {
   VERIFY_EMAIL_WINDOW = 2,

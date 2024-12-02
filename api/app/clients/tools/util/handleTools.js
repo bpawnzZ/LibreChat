@@ -2,7 +2,7 @@ const { Tools } = require('librechat-data-provider');
 const { SerpAPI } = require('@langchain/community/tools/serpapi');
 const { Calculator } = require('@langchain/community/tools/calculator');
 const { createCodeExecutionTool, EnvVar } = require('@librechat/agents');
-const { getUserPluginAuthValue } = require('~/server/services/PluginService');
+const { getUserPluginAuthValue } = require('../../../../server/services/PluginService');
 const {
   availableTools,
   // Basic Tools
@@ -15,10 +15,10 @@ const {
   StructuredWolfram,
   TavilySearchResults,
 } = require('../');
-const { primeFiles } = require('~/server/services/Files/Code/process');
+const { primeFiles } = require('../../../../server/services/Files/Code/process');
 const createFileSearchTool = require('./createFileSearchTool');
 const { loadSpecs } = require('./loadSpecs');
-const { logger } = require('~/config');
+const { logger } = require('../../../../config');
 
 /**
  * Validates the availability and authentication of tools for a user based on environment variables or user-specific plugin authentication values.

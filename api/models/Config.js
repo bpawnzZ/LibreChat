@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-const { logger } = require('~/config');
+const { logger } = require('../config');
 
 const major = [0, 0];
 const minor = [0, 0];

@@ -2,7 +2,7 @@ const { nanoid } = require('nanoid');
 const { Constants } = require('librechat-data-provider');
 const SharedLink = require('./schema/shareSchema');
 const { getMessages } = require('./Message');
-const logger = require('~/config/winston');
+const logger = require('../config/winston');
 
 /**
  * Anonymizes a conversation ID

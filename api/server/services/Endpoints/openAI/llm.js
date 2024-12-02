@@ -1,6 +1,6 @@
 const { HttpsProxyAgent } = require('https-proxy-agent');
-const { sanitizeModelName, constructAzureURL } = require('~/utils');
-const { isEnabled } = require('~/server/utils');
+const { sanitizeModelName, constructAzureURL } = require('../../../../utils');
+const { isEnabled } = require('../../../utils');
 
 /**
  * Generates configuration options for creating a language model (LLM) instance.

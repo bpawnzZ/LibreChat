@@ -1,11 +1,11 @@
 const express = require('express');
 const throttle = require('lodash/throttle');
 const { getResponseSender, Constants, CacheKeys, Time } = require('librechat-data-provider');
-const { initializeClient } = require('~/server/services/Endpoints/gptPlugins');
-const { sendMessage, createOnProgress } = require('~/server/utils');
-const { addTitle } = require('~/server/services/Endpoints/openAI');
-const { saveMessage, updateMessage } = require('~/models');
-const { getLogStores } = require('~/cache');
+const { initializeClient } = require('../../services/Endpoints/gptPlugins');
+const { sendMessage, createOnProgress } = require('../../utils');
+const { addTitle } = require('../../services/Endpoints/openAI');
+const { saveMessage, updateMessage } = require('../../../models');
+const { getLogStores } = require('../../../cache');
 const {
   handleAbort,
   createAbortController,
@@ -15,9 +15,9 @@ const {
   validateEndpoint,
   buildEndpointOption,
   moderateText,
-} = require('~/server/middleware');
-const { validateTools } = require('~/app');
-const { logger } = require('~/config');
+} = require('../../middleware');
+const { validateTools } = require('../../../app');
+const { logger } = require('../../../config');
 
 const router = express.Router();
 

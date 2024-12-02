@@ -1,7 +1,7 @@
 const { createSocialUser, handleExistingUser } = require('./process');
-const { isEnabled } = require('~/server/utils');
-const { findUser } = require('~/models');
-const { logger } = require('~/config');
+const { isEnabled } = require('../server/utils');
+const { findUser } = require('../models');
+const { logger } = require('../config');
 
 const socialLogin =
   (provider, getProfileDetails) => async (accessToken, refreshToken, profile, cb) => {

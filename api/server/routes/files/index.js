@@ -1,7 +1,7 @@
 const express = require('express');
-const { uaParser, checkBan, requireJwtAuth, createFileLimiters } = require('~/server/middleware');
-const { avatar: asstAvatarRouter } = require('~/server/routes/assistants/v1');
-const { avatar: agentAvatarRouter } = require('~/server/routes/agents/v1');
+const { uaParser, checkBan, requireJwtAuth, createFileLimiters } = require('../../middleware');
+const { avatar: asstAvatarRouter } = require('../../routes/assistants/v1');
+const { avatar: agentAvatarRouter } = require('../../routes/agents/v1');
 const { createMulterInstance } = require('./multer');
 
 const files = require('./files');

@@ -1,8 +1,8 @@
 const fs = require('fs');
 const path = require('path');
 const { z } = require('zod');
-const { logger } = require('~/config');
-const { createOpenAPIPlugin } = require('~/app/clients/tools/dynamic/OpenAPIPlugin');
+const { logger } = require('../../../../config');
+const { createOpenAPIPlugin } = require('../../../clients/tools/dynamic/OpenAPIPlugin');
 
 // The minimum Manifest definition
 const ManifestDefinition = z.object({

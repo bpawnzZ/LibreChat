@@ -1,12 +1,12 @@
 const { isAssistantsEndpoint, ErrorTypes } = require('librechat-data-provider');
-const { sendMessage, sendError, countTokens, isEnabled } = require('~/server/utils');
-const { truncateText, smartTruncateText } = require('~/app/clients/prompts');
-const clearPendingReq = require('~/cache/clearPendingReq');
-const { spendTokens } = require('~/models/spendTokens');
+const { sendMessage, sendError, countTokens, isEnabled } = require('../utils');
+const { truncateText, smartTruncateText } = require('../../app/clients/prompts');
+const clearPendingReq = require('../../cache/clearPendingReq');
+const { spendTokens } = require('../../models/spendTokens');
 const abortControllers = require('./abortControllers');
-const { saveMessage, getConvo } = require('~/models');
+const { saveMessage, getConvo } = require('../../models');
 const { abortRun } = require('./abortRun');
-const { logger } = require('~/config');
+const { logger } = require('../../config');
 
 async function abortMessage(req, res) {
   let { abortKey, endpoint } = req.body;

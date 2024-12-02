@@ -4,15 +4,15 @@ const { CallbackManager } = require('@langchain/core/callbacks/manager');
 const { BufferMemory, ChatMessageHistory } = require('langchain/memory');
 const { addImages, buildErrorInput, buildPromptPrefix } = require('./output_parsers');
 const { initializeCustomAgent, initializeFunctionsAgent } = require('./agents');
-const { processFileURL } = require('~/server/services/Files/process');
+const { processFileURL } = require('../../server/services/Files/process');
 const { EModelEndpoint } = require('librechat-data-provider');
 const { formatLangChainMessages } = require('./prompts');
-const checkBalance = require('~/models/checkBalance');
-const { isEnabled } = require('~/server/utils');
-const { extractBaseURL } = require('~/utils');
+const checkBalance = require('../../models/checkBalance');
+const { isEnabled } = require('../../server/utils');
+const { extractBaseURL } = require('../../utils');
 const { loadTools } = require('./tools/util');
-const { getLogStores } = require('~/cache');
-const { logger } = require('~/config');
+const { getLogStores } = require('../../cache');
+const { logger } = require('../../config');
 
 class PluginsClient extends OpenAIClient {
   constructor(apiKey, options = {}) {
