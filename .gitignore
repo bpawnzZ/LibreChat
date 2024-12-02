@@ -57,6 +57,8 @@ bower_components/
 #config file
 librechat.yaml
 librechat.yml
+docker-compose.override.yaml
+docker-compose.override.yml
 
 # Environment
 .npmrc
